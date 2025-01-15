@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 
-function BurgerIcon(props) {
+export function BurgerIcon(props) {
   return (
     <div className="flex flex-col items-end justify-center gap-1">
       <motion.div
@@ -24,4 +24,3 @@ function BurgerIcon(props) {
     </div>
   );
 }
-export default BurgerIcon;

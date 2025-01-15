@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 
-function HeroIconSVG(props) {
+export function HeroIconSVG(props) {
   const STARS = [
     {
       id: "Vector_34",
@@ -1662,4 +1662,3 @@ function HeroIconSVG(props) {
     </svg>
   );
 }
-export default HeroIconSVG;

@@ -1,6 +1,5 @@
 import { useState } from "react";
-import Navbar from "./components/navbar/NavigationBar";
-import Hero from "./components/Hero";
+import { Navbar, Hero, About } from "./components";
 
 function App() {
   const [navIsOpen, setNavIsOpen] = useState(false);
@@ -11,6 +10,7 @@ function App() {
     >
       <Navbar navIsOpen={navIsOpen} setNavIsOpen={setNavIsOpen} />
       <Hero />
+      <About />
     </div>
   );
 }

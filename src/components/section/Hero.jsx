@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
-import BackgroundBox from "./BackgroundBox";
-import HeroIconSVG from "./HeroIconSVG";
+import { BackgroundBox } from "../BackgroundBox";
+import { HeroIconSVG } from "../../assets";
 
-function Hero() {
+export function Hero() {
   return (
     <BackgroundBox className="flex flex-col items-center gap-2 pb-0 md:relative md:flex-row md:items-start md:justify-around md:pb-0">
       <div className="flex flex-col items-center gap-2 md:items-start">
@@ -46,4 +46,3 @@ function Hero() {
     </BackgroundBox>
   );
 }
-export default Hero;

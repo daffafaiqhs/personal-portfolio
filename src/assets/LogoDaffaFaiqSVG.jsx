@@ -1,7 +1,7 @@
 import { delay, motion } from "motion/react";
 import { useState, useEffect } from "react";
 
-function LogoDaffaFaiqSVG(props) {
+export function LogoDaffaFaiqSVG(props) {
   const [animateProps, setAnimateProps] = useState({
     scale: [0, 1.2, 1],
     rotate: [-12, -5],
@@ -180,4 +180,3 @@ function LogoDaffaFaiqSVG(props) {
     </svg>
   );
 }
-export default LogoDaffaFaiqSVG;
