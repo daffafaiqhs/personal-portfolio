@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { delay, motion } from "motion/react";
 import { useState, useEffect } from "react";
 
 function LogoDaffaFaiqSVG(props) {
@@ -81,6 +81,8 @@ function LogoDaffaFaiqSVG(props) {
 
   return (
     <svg
+      width="100%"
+      height="100%"
       viewBox="0 0 127 34"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -147,13 +149,18 @@ function LogoDaffaFaiqSVG(props) {
         <g id="Text">{lettersHTML}</g>
         <motion.g
           id="Main"
-          initial={{ scale: 0, x: 110 }}
-          animate={{ scale: 1, x: 0 }}
+          initial={{ scale: 0, x: 110, rotate: 0 }}
+          animate={{ scale: 1, x: 0, rotate: [0, -15, 0] }}
           transition={{
             scale: {
               delay: greetingDuration,
               duration: mainScaleDuration,
               ease: "easeInOut",
+            },
+            rotate: {
+              times: [0, 0.8, 1],
+              delay: greetingDuration,
+              duration: mainScaleDuration + mainXDuration,
             },
             x: {
               delay: mainScaleDuration + greetingDuration,

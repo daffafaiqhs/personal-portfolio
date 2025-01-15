@@ -1,6 +1,7 @@
 import LogoDaffaFaiqSVG from "./LogoDaffaFaiqSVG";
 import BurgerIcon from "./BurgerIcon";
 import NavMenu from "./NavMenu";
+import { motion } from "motion/react";
 
 function Navbar(props) {
   const navOpenDuration = 0.3;
@@ -26,19 +27,20 @@ function Navbar(props) {
 
   return (
     <>
-      <div className="flex w-full items-center justify-between px-4 py-6 md:px-16 md:py-8">
+      <div className="flex w-full items-center justify-between px-4 py-4 md:px-16 md:py-8 2xl:w-2xl">
         <div className="h-auto w-24 md:w-32 xl:w-36">
           <LogoDaffaFaiqSVG />
         </div>
         <nav className="hidden md:flex md:gap-6">
           {navItems.map((item, i) => (
-            <a
+            <motion.a
               key={i}
               href={item.href}
-              className={`text-center hover:text-brand-orange ${i === 0 ? "font-bold" : ""}`.trim()}
+              className={`text-center ${i === 0 ? "font-bold" : ""}`.trim()}
+              whileHover={{ color: "#FF933F" }}
             >
               {item.name}
-            </a>
+            </motion.a>
           ))}
         </nav>
 
