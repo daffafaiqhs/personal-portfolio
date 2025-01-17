@@ -4,7 +4,7 @@ import { HeroIconSVG } from "../../assets";
 
 export function Hero() {
   return (
-    <BackgroundBox className="flex flex-col items-center gap-2 pb-0 md:relative md:flex-row md:items-start md:justify-around md:pb-0">
+    <BackgroundBox className="flex flex-col items-center gap-2 p-6 pb-0 md:relative md:flex-row md:items-start md:justify-around md:rounded-[2.5rem] md:px-8 md:pt-7 2xl:w-2xl">
       <div className="flex flex-col items-center gap-2 md:items-start">
         <h1 className="text-center text-xs font-light md:hidden">
           Daffa's 3rd Year Informatics Student's Portfolio
@@ -19,14 +19,18 @@ export function Hero() {
           <h1 className="font-bold">Tommorow's</h1>
           <div className="flex items-center md:gap-1">
             <div className="mx-3 aspect-[9/16] h-9 rounded-md bg-gradient-to-b from-brand-orange to-brand-yellow md:h-12 xl:h-16" />
-            <h1 className="inline font-light">
+            <h1 className="inline whitespace-nowrap font-light">
               Web <span className="font-bold">Today!</span>
             </h1>
           </div>
         </div>
         <motion.button
           className="my-4 flex items-center justify-center gap-1 rounded-lg border border-gray-500 px-16 py-1 text-xs font-light sm:px-20 md:px-32 lg:px-40 lg:text-sm xl:px-56 xl:text-base"
-          whileHover={{ borderColor: "#FF933F", color: "#FF760B" }}
+          whileHover={{
+            borderColor: "#FF933F",
+            backgroundColor: "#FF933F",
+            color: "#FFF",
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

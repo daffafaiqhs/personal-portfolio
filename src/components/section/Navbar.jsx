@@ -25,7 +25,7 @@ export function Navbar(props) {
 
   return (
     <>
-      <div className="flex w-full items-center justify-between px-4 py-4 md:px-16 md:py-8 2xl:w-2xl">
+      <div className="sm-md:w-[415px] flex w-full items-center justify-between p-4 md:w-auto md:p-8 2xl:w-2xl">
         <div className="h-auto w-24 md:w-32 xl:w-36">
           <LogoDaffaFaiqSVG />
         </div>
@@ -43,7 +43,7 @@ export function Navbar(props) {
         </nav>
 
         <div
-          className="relative z-10 flex flex-col items-end justify-center gap-1 md:hidden"
+          className="relative z-50 flex flex-col items-end justify-center gap-1 md:hidden"
           onClick={() => props.setNavIsOpen(!props.navIsOpen)}
         >
           <BurgerIcon navIsOpen={props.navIsOpen} />
@@ -95,7 +95,7 @@ function MobileNavbar(props) {
 
   return (
     <motion.div
-      className="absolute -bottom-96 left-0 right-0 top-0 hidden h-full w-full flex-col gap-9 bg-black px-14 pt-28 text-5xl text-stone-700"
+      className="absolute -bottom-96 left-0 right-0 top-0 z-40 hidden h-full w-full flex-col gap-9 bg-black px-14 pt-28 text-5xl text-stone-700"
       initial={{ y: -1 * screenHeight }}
       animate={
         props.navIsOpen ? { y: 0, display: "flex" } : { y: -1 * screenHeight }

@@ -46,7 +46,7 @@ export function HeroIconSVG(props) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
-      className="max-w-80 md:min-w-[300px] md:max-w-[400px] lg:max-w-[500px] xl:max-w-[650px]"
+      className="max-w-80 md:max-w-[400px] lg:max-w-[500px] xl:max-w-[650px]"
     >
       <g id="rocket_svg" clipPath="url(#clip0_297_94)">
         <g id="ornament">
