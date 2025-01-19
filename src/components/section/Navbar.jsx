@@ -25,7 +25,7 @@ export function Navbar(props) {
 
   return (
     <>
-      <div className="sm-md:w-[415px] flex w-full items-center justify-between p-4 md:w-auto md:p-8 2xl:w-2xl">
+      <div className="flex w-full items-center justify-between p-4 sm-md:w-[415px] md:w-auto md:p-8 2xl:w-2xl">
         <div className="h-auto w-24 md:w-32 xl:w-36">
           <LogoDaffaFaiqSVG />
         </div>
@@ -95,7 +95,7 @@ function MobileNavbar(props) {
 
   return (
     <motion.div
-      className="absolute -bottom-96 left-0 right-0 top-0 z-40 hidden h-full w-full flex-col gap-9 bg-black px-14 pt-28 text-5xl text-stone-700"
+      className="absolute -bottom-96 left-0 right-0 top-0 z-40 hidden h-full w-full flex-col gap-9 bg-black px-14 pt-28 text-5xl text-stone-700 sm-md:items-center md:opacity-0"
       initial={{ y: -1 * screenHeight }}
       animate={
         props.navIsOpen ? { y: 0, display: "flex" } : { y: -1 * screenHeight }
@@ -104,7 +104,9 @@ function MobileNavbar(props) {
         duration: props.navOpenDuration,
       }}
     >
-      <nav className="flex flex-col gap-9">{navItemHTML}</nav>
+      <nav className="flex flex-col gap-9 sm-md:max-w-[415px]">
+        {navItemHTML}
+      </nav>
     </motion.div>
   );
 }

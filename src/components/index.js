@@ -1,4 +1,5 @@
 export { Navbar } from "./section/Navbar"
 export { Hero } from "./section/Hero";
 export { About } from "./section/About";
+export { TechStack } from "./section/TechStack";
 export { BackgroundBox } from "./BackgroundBox"

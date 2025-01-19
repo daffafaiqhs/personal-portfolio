@@ -1,12 +1,12 @@
 import { BackgroundBox } from "..";
 import PotraitIMG from "../../assets/PotraitIMG.webp";
-import { IoMdMailOpen, IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
+import { IoMailOpen, IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
 import { motion } from "motion/react";
 import { useState } from "react";
 
 export function About() {
   return (
-    <section className="grid-rows-[1fr, auto] grid gap-8 sm-md:w-[415px] md:w-auto md:grid-cols-2 md:grid-rows-1 2xl:w-2xl">
+    <section className="grid-rows-[1fr, auto] grid gap-4 sm-md:w-[415px] md:w-auto md:grid-cols-2 md:grid-rows-1 2xl:w-2xl">
       <SelfPotrait />
       <Description />
     </section>
@@ -36,7 +36,7 @@ function SelfPotrait() {
             color: "#FFF",
           }}
         >
-          <IoMdMailOpen />
+          <IoMailOpen />
         </motion.a>
         <motion.a
           className="rounded-full border border-gray-500 bg-transparent p-1 text-xl sm:p-2 sm:text-xl lg:text-3xl"
