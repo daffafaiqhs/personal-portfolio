@@ -50,14 +50,14 @@ const projectList = [
 
 export function Projects() {
   return (
-    <BackgroundBox className="flex flex-col items-center gap-8 p-6">
+    <BackgroundBox className="flex flex-col items-center gap-16 px-5 py-14">
       <div className="flex w-fit flex-col text-center">
         <h1 className="text-xl font-bold lg:text-2xl">My Latest Projects!</h1>
         <h2 className="text-sm font-light sm-md:text-base xl:text-lg">
           This is some of the project that i have worked on
         </h2>
       </div>
-      <div className="grid h-fit w-full gap-8 gap-y-10 md:grid-cols-6">
+      <div className="grid h-fit w-full gap-8 gap-y-12 md:grid-cols-6">
         {projectList.map((project, index) => {
           const row = index % 5 === 0 || index % 5 === 1 ? 1 : 2;
           return <ProjectItem key={index} row={row} project={project} />;
@@ -73,7 +73,7 @@ function ProjectItem(props) {
 
   return (
     <motion.div
-      className={`col-span-6 cursor-pointer rounded-lg md:col-span-3 ${row === 2 && "lg:col-span-2"}`}
+      className={`col-span-6 cursor-pointer rounded-lg md:col-span-3 ${row === 2 && "xl:col-span-2"}`}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
