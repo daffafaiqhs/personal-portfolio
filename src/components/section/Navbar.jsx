@@ -1,4 +1,4 @@
-import { BurgerIcon, LogoDaffaFaiqSVG } from "../../assets";
+import { BurgerIcon, AnimatedNameLogo } from "../../assets";
 import { motion } from "motion/react";
 
 export function Navbar(props) {
@@ -27,7 +27,7 @@ export function Navbar(props) {
     <>
       <div className="flex w-full items-center justify-between p-4 sm-md:w-[415px] md:w-auto md:p-8 2xl:w-2xl">
         <div className="h-auto w-24 md:w-32 xl:w-36">
-          <LogoDaffaFaiqSVG />
+          <AnimatedNameLogo />
         </div>
         <nav className="hidden md:flex md:gap-6">
           {navItems.map((item, i) => (

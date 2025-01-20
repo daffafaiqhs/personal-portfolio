@@ -6,6 +6,7 @@ import {
   TechStack,
   Projects,
   Contact,
+  Footer,
 } from "./components";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           </div>
         </div>
         <Contact />
+        <Footer className="mx-3 xl:mx-5" />
       </div>
     </>
   );
