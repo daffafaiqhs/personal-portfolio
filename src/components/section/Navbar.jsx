@@ -104,9 +104,7 @@ function MobileNavbar(props) {
         duration: props.navOpenDuration,
       }}
     >
-      <nav className="flex flex-col gap-9 sm-md:max-w-[415px]">
-        {navItemHTML}
-      </nav>
+      <nav className="flex flex-col gap-9">{navItemHTML}</nav>
     </motion.div>
   );
 }

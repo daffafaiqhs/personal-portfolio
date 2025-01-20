@@ -23,6 +23,7 @@ export default {
         '4.5xl': ['2.6rem', '1'],
       },
       width: {
+        'sm-md': '415px',
         '2xl': '1536px',
       },
     },

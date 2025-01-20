@@ -1,12 +1,12 @@
-import { BackgroundBox } from "..";
-import PotraitIMG from "../../assets/PotraitIMG.webp";
+import { BackgroundBox } from "../BackgroundBox";
+import PotraitIMG from "../../assets/PotraitIMG.png";
 import { IoMailOpen, IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
 import { motion } from "motion/react";
 import { useState } from "react";
 
 export function About() {
   return (
-    <section className="grid-rows-[1fr, auto] grid gap-4 sm-md:w-[415px] md:w-auto md:grid-cols-2 md:grid-rows-1 2xl:w-2xl">
+    <section className="grid-rows-[1fr, auto] grid gap-4 md:grid-cols-2 md:grid-rows-1">
       <SelfPotrait />
       <Description />
     </section>
@@ -66,7 +66,7 @@ function SelfPotrait() {
       <img
         src={PotraitIMG}
         alt="daffa's profile"
-        width={"340px"}
+        width={"360px"}
         className="sm:w-auto lg:w-10/12 lg:max-w-[480px] xl:max-w-[550px] 2xl:max-h-[860px]"
       />
     </BackgroundBox>

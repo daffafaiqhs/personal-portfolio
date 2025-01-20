@@ -4,6 +4,7 @@ export function HtmlLogo(props) {
       viewBox="0 0 364 412"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={props.className}
       {...props}
     >
       <g clipPath="url(#clip0_370_94)">

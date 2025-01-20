@@ -4,7 +4,7 @@ import { HeroIconSVG } from "../../assets";
 
 export function Hero() {
   return (
-    <BackgroundBox className="flex flex-col items-center gap-2 p-6 pb-0 md:relative md:flex-row md:items-start md:justify-around md:rounded-[2.5rem] md:px-8 md:pt-7 2xl:w-2xl">
+    <BackgroundBox className="flex flex-col items-center gap-2 p-6 pb-0 md:relative md:flex-row md:items-start md:justify-around md:rounded-[2.5rem] md:px-8 md:pt-7">
       <div className="flex flex-col items-center gap-2 md:items-start">
         <h1 className="text-center text-xs font-light md:hidden">
           Daffa's 3rd Year Informatics Student's Portfolio
