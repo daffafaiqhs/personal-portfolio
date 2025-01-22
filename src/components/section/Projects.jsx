@@ -50,7 +50,7 @@ const projectList = [
 
 export function Projects() {
   return (
-    <BackgroundBox className="flex flex-col items-center gap-16 px-5 py-14">
+    <BackgroundBox className="flex flex-col items-center gap-10 px-5 py-8">
       <div className="flex w-fit flex-col text-center">
         <h1 className="mb-2 text-xl font-bold lg:text-2xl">
           My Latest Projects!

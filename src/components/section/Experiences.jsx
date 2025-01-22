@@ -56,12 +56,12 @@ export function Experiences() {
     <BackgroundBox className="flex flex-col gap-4 p-6 lg:h-[690px] lg:gap-6">
       <div>
         <h1 className="mb-2 text-xl font-bold lg:text-2xl">My Experiences!</h1>
-        <p className="text-sm font-light sm:text-base xl:text-lg">
+        <p className="text-sm font-light md:text-base xl:text-lg">
           Featuring my education, certifications, and practical experiences!
         </p>
       </div>
       <select
-        className="w-full rounded-md border border-gray-400 text-sm font-light sm:text-base lg:hidden"
+        className="w-full rounded-md border border-gray-400 py-2 text-sm font-light lg:hidden"
         onChange={(e) => changeState(e.target.value)}
       >
         <option value="educations">Education & Practical Experience</option>

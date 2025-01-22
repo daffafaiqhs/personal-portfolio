@@ -173,7 +173,7 @@ function Description() {
           <p>longest</p>
         </div>
       </div>
-      <p className="mt-5 text-justify font-light leading-loose">
+      <p className="mt-5 text-justify text-sm font-light leading-loose xl:text-base xl:leading-loose">
         {introductionMessage[intoductionSelector]}
       </p>
     </BackgroundBox>
