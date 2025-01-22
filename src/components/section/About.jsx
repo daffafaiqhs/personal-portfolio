@@ -15,7 +15,7 @@ export function About() {
 
 function SelfPotrait() {
   return (
-    <BackgroundBox className="relative z-10 flex h-full flex-col justify-between md:w-auto lg:justify-end">
+    <BackgroundBox className="relative flex h-full flex-col justify-between md:w-auto lg:justify-end">
       <div className="px-6 pt-6 lg:absolute lg:right-5 lg:top-0 lg:self-start xl:top-5">
         <div className="inline-block text-3xl font-medium leading-8 lg:text-3xl xl:text-4xl 2xl:text-5xl">
           <h2 className="text-sm font-light lg:text-base xl:text-lg">

@@ -52,7 +52,9 @@ export function Projects() {
   return (
     <BackgroundBox className="flex flex-col items-center gap-16 px-5 py-14">
       <div className="flex w-fit flex-col text-center">
-        <h1 className="text-xl font-bold lg:text-2xl">My Latest Projects!</h1>
+        <h1 className="mb-2 text-xl font-bold lg:text-2xl">
+          My Latest Projects!
+        </h1>
         <h2 className="text-sm font-light sm-md:text-base xl:text-lg">
           This is some of the project that i have worked on
         </h2>

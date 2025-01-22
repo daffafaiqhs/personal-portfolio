@@ -21,7 +21,7 @@ export function TechStack() {
   ];
 
   return (
-    <section className="my-2 rounded-xl bg-gradient-to-r from-brand-yellow to-brand-orange py-2 md:my-6 md:max-w-full 2xl:max-w-[1533px]">
+    <section className="z-0 my-2 rounded-xl bg-gradient-to-r from-brand-yellow to-brand-orange py-2 md:my-6 md:max-w-full 2xl:max-w-[1533px]">
       <Marquee
         className="overflow-hidden rounded bg-white"
         pauseOnHover

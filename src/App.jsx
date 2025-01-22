@@ -3,6 +3,7 @@ import {
   Navbar,
   Hero,
   About,
+  Experiences,
   TechStack,
   Projects,
   Contact,
@@ -22,6 +23,7 @@ function App() {
           <div className="flex flex-col gap-4 sm-md:w-sm-md md:w-auto 2xl:w-2xl">
             <Hero />
             <About />
+            <Experiences />
             <TechStack />
             <Projects />
           </div>
