@@ -14,6 +14,10 @@ export function Navbar(props) {
       href: "",
     },
     {
+      name: "Experiences",
+      href: "",
+    },
+    {
       name: "Projects",
       href: "",
     },
@@ -95,10 +99,17 @@ function MobileNavbar(props) {
 
   return (
     <motion.div
-      className="absolute -bottom-96 left-0 right-0 top-0 z-40 hidden h-full w-full flex-col gap-9 bg-black px-14 pt-28 text-5xl text-stone-700 sm-md:items-center md:opacity-0"
+      className="just absolute -bottom-96 left-0 right-0 top-0 z-40 hidden h-full w-full flex-col gap-9 overflow-hidden bg-black text-4xl text-stone-700 sm:text-5xl sm-md:items-center md:opacity-0"
       initial={{ y: -1 * screenHeight }}
       animate={
-        props.navIsOpen ? { y: 0, display: "flex" } : { y: -1 * screenHeight }
+        props.navIsOpen
+          ? {
+              y: 0,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }
+          : { y: -1 * screenHeight }
       }
       transition={{
         duration: props.navOpenDuration,
