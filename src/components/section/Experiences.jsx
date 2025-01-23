@@ -98,7 +98,7 @@ function EducationalItem(props) {
         </p>
       </div>
       <hr className="rounded border border-brand-yellow" />
-      <p className="font-light xl:text-lg">My learning focus includes:</p>
+      <p className="font-light xl:text-lg">{education.description}</p>
       <li className="flex list-none flex-col gap-2 font-light">
         {education.skillsAcquired.map((skill, index) => {
           return (

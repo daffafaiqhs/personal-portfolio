@@ -1,4 +1,4 @@
-import { RuangguruLogo } from "./assets/logo";
+import { RuangguruLogo, UPNLogo } from "./assets/logo";
 import * as certificate from "./assets/certificate";
 import * as techLogo from "./assets/logo/tech";
 import * as projectImage from "./assets/projects";
@@ -94,14 +94,43 @@ export const experiences_EducationalExperience = [
     duration: "9 Sep 2024 - 31 Dec 2024",
     programName:
       "Fullstack Golang & Ai: Dari Prinsip Dasar Hingga Aplikasi Praktis",
+    description: (
+      <>
+        For four months, I participated in the{" "}
+        <b>Independent Certified Study Program</b> under the Kampus Merdeka
+        initiative, organized by the Ministry of Education, Culture, Research,
+        and Technology. One of the program's partners, PT. Ruang Raya Indonesia
+        (Ruangguru), hosted the Ruangguru CAMP program. Through this program, I
+        delved into the{" "}
+        <b>Fullstack Golang & Ai: Dari Prinsip Dasar Hingga Aplikasi Praktis</b>{" "}
+        class. The learning experience in this program included:
+      </>
+    ),
     skillsAcquired: [
-      "Develop professional skills in communication, presentation, creative thinking, and strategic problem-solving.",
-      "Use terminal, Visual Studio Code, and Git for efficient project management and collaboration.",
-      "Build web applications with HTML, CSS, Tailwind, and Node.js, focusing on RESTful APIs and asynchronous programming.",
-      "Create Single Page Applications using ReactJS, mastering components, state, and deployment.",
-      "Develop backend systems with Golang, including data structures, algorithms, unit testing, and concurrency.",
-      "Design and manage relational databases while also learning about NoSQL database.",
-      "Understand Machine Learning fundamentals and integrate AI technologies into applications.",
+      "Develop professional skills in communication, presentation, creative thinking, and strategic problem-solving through Keterampilan Inti subject.",
+      "Use terminal, Visual Studio Code, and Git for efficient project management and collaboration through Rekayasa Piranti Lunak subject.",
+      "Build web applications with HTML, CSS, Tailwind, and Node.js, focusing on RESTful APIs and asynchronous programming through Pemrograman Frontend Web Dasar subject.",
+      "Create Single Page Applications using ReactJS, mastering components, state, and deployment through Pemrograman Frontend dengan React.",
+      "Develop backend systems with Golang, including data structures, algorithms, unit testing, and concurrency through Pemrograman Backend Web dengan Golang.",
+      "Design and manage relational databases while also learning about NoSQL database through Sistem Manajemen dan Teknologi Basis Data subject.",
+      "Understand Machine Learning fundamentals and integrate AI technologies into applications throught Menguasai Teknologi Artificial Intelligence subject.",
+    ],
+  },
+  {
+    organization: "Universitas Pembangunan Nasional Veteran Jawa Timur",
+    organizationLogo: <img src={UPNLogo} alt="Logo UPN Jawa Timur" />,
+    duration: "2022  - NOW",
+    programName: "Informatics Program Study",
+    description: "My learning focus includes:",
+    skillsAcquired: [
+      "Studied subjects like Pancasila, Agama Islam, Bahasa Indonesia, Bahasa Inggris, Kewarganegaraan, and Bela Negara to develop strong ethical values and effective communication abilities.",
+      "Studied subjects like Matematika Komputasi, Aljabar Linier & Matrik, and Matematika Diskrit to build a solid mathematical foundation for problem-solving.",
+      "Learned the basics of computing through subjects like Arsitektur Komputer, Sistem & Teknologi Informasi, and Sistem Operasi.",
+      "Mastered programming skills through Algoritma & Pemrograman, Pemrograman Lanjut, Pemrograman Web, and Pemrograman Berorientasi Objek.",
+      "Developed expertise in Pemrograman Web, Kecerdasan Buatan, Jaringan Komputer, Desain Antarmuka, and Rekayasa Perangkat Lunak.",
+      "Studied data management and analysis through subjects like Struktur Data, Basis Data, and Basis Data Lanjut.",
+      "Enhanced leadership and entrepreneurial skills through Kewirausahaan, Kepemimpinan, and Etika & Kompetensi Informatika.",
+      "Learned systems and design through subjects like Analisis & Desain Sistem.",
     ],
   },
 ];
