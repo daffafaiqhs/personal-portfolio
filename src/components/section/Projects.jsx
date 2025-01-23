@@ -1,9 +1,10 @@
 import { BackgroundBox } from "../BackgroundBox";
 import * as AssetsLogo from "../../assets/logo";
-import { ArrowIcon } from "../../assets";
+import { GoCodeReview } from "react-icons/go";
 import IonsIMG from "../../assets/IONS.png";
 import { motion } from "motion/react";
 import { useState } from "react";
+import { FiArrowUpRight, FiArrowRight } from "react-icons/fi";
 
 const projectList = [
   {
@@ -59,10 +60,9 @@ export function Projects() {
           This is some of the project that i have worked on
         </h2>
       </div>
-      <div className="grid h-fit w-full gap-8 gap-y-12 md:grid-cols-6">
+      <div className="grid h-fit w-full gap-12 md:grid-cols-6 lg:gap-4">
         {projectList.map((project, index) => {
-          const row = index % 5 === 0 || index % 5 === 1 ? 1 : 2;
-          return <ProjectItem key={index} row={row} project={project} />;
+          return <ProjectItem key={index} project={project} />;
         })}
       </div>
     </BackgroundBox>
@@ -71,64 +71,61 @@ export function Projects() {
 
 function ProjectItem(props) {
   const [isHovered, setIsHovered] = useState(false);
-  const { row, project = {} } = props;
+  const { project } = props;
 
   return (
     <motion.div
-      className={`col-span-6 cursor-pointer rounded-lg md:col-span-3 ${row === 2 && "xl:col-span-2"}`}
+      className="col-span-6 flex flex-col gap-4 rounded md:col-span-3 lg:p-5 xl:col-span-2"
+      animate={{
+        outline: isHovered ? "2px solid #FF933F" : "none",
+        boxShadow: isHovered ? "0 8px 16px rgba(0, 0, 0, 0.2)" : "none",
+      }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <motion.div
-        className="relative h-40 md:h-64 lg:h-72 xl:h-80 2xl:h-96"
-        transition={{ duration: 0.3 }}
-      >
-        <motion.div
-          className="absolute right-5 top-5 z-10 size-12"
-          animate={{
-            opacity: isHovered ? 1 : 0,
-          }}
-          transition={{
-            duration: isHovered ? 0.5 : 0.3,
-            delay: isHovered ? 0.4 : 0,
-          }}
-        >
-          <ArrowIcon />
-        </motion.div>
-        <motion.div
-          className="absolute h-full w-full rounded-lg border-brand-yellow"
-          animate={{
-            backgroundColor: isHovered
-              ? "rgba(0, 0, 0, 0.7)"
-              : "rgba(0, 0, 0, 0)",
-            borderWidth: isHovered ? "4px" : 0,
-          }}
-          transition={{ duration: 0.3 }}
-        />
-        <motion.p
-          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-center text-3xl text-brand-yellow md:text-xl 2xl:text-2xl ${row === 2 && "lg:text-lg xl:text-xl"}`}
-          animate={{
-            opacity: isHovered ? 1 : 0,
-          }}
-          transition={{
-            duration: isHovered ? 0.5 : 0.3,
-            delay: isHovered ? 0.4 : 0,
+      <img
+        src={project.image}
+        alt={project.imageALT}
+        className="aspect-video w-full object-cover"
+      />
+
+      <div className="flex flex-col gap-2">
+        <h1 className="text-lg font-semibold xl:text-xl">{project.title}</h1>
+        <h2 className="mb-3 font-light xl:text-lg">{project.description}</h2>
+        {/* <div className="flex flex-wrap gap-2 gap-y-2">
+          {project.tech.map((value, index) => (
+            <TechTag key={index} name={value} />
+          ))}
+        </div> */}
+      </div>
+      <div className="flex items-center justify-between gap-4 text-sm">
+        <motion.a
+          href=""
+          className="flex gap-1 rounded-lg border border-brand-orange px-3 py-2"
+          whileHover={{
+            backgroundColor: "#FF933F",
+            borderColor: "#FF933F",
+            color: "#FFF",
           }}
         >
-          Click to see more
-        </motion.p>
-        <img
-          src={project.image}
-          alt={project.imageALT}
-          className="h-full w-full rounded-lg object-cover"
-        />
-      </motion.div>
-      <h1 className="mt-4 text-lg font-semibold xl:text-xl">{project.title}</h1>
-      <h2 className="mt-2 font-light xl:text-lg">{project.description}</h2>
-      <div className="mt-4 flex flex-wrap gap-2 gap-y-2">
-        {project.tech.map((value, index) => (
-          <TechTag key={index} name={value} />
-        ))}
+          Live Demo
+          <div className="mt-1">
+            <FiArrowUpRight />
+          </div>
+        </motion.a>
+        <motion.button
+          className="flex gap-1 rounded-lg border border-brand-orange px-3 py-2"
+          whileHover={{
+            backgroundColor: "#FF933F",
+            borderColor: "#FF933F",
+            color: "#FFF",
+          }}
+        >
+          Details
+          <div className="mt-1">
+            <FiArrowRight />
+          </div>
+        </motion.button>
       </div>
     </motion.div>
   );
