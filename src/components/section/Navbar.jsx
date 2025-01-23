@@ -1,6 +1,7 @@
-import { useState } from "react";
-import { BurgerIcon, AnimatedNameLogo } from "../../assets";
 import { motion } from "motion/react";
+
+import { AnimatedNameLogo } from "../../assets/logo";
+import { BurgerIcon } from "../../assets/";
 
 const scrollTo = (itemName, itemRef, delaySecond) => {
   // if (itemRef.current) {
@@ -65,8 +66,8 @@ export function Navbar(props) {
           {navItems.map((item, i) => (
             <motion.button
               key={i}
-              className="text-center"
-              whileHover={{ color: "#FF933F", textDecoration: "underline" }}
+              className="relative text-center"
+              whileHover={{ color: "#FF933F" }}
               onClick={() => {
                 scrollTo(item.name, item.ref, 0);
               }}

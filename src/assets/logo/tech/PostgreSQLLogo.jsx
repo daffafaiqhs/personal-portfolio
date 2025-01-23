@@ -1,4 +1,4 @@
-export function PostgreLogo(props) {
+export function PostgreSQLLogo(props) {
   return (
     <svg
       viewBox="0 0 26 26"

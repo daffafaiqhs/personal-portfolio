@@ -8,7 +8,7 @@ import {
   Projects,
   Contact,
   Footer,
-} from "./components";
+} from "./components/section";
 
 import "react-photo-view/dist/react-photo-view.css";
 import { useRef } from "react";

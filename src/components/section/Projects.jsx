@@ -1,53 +1,9 @@
-import { BackgroundBox } from "../BackgroundBox";
-import * as AssetsLogo from "../../assets/logo";
-import { GoCodeReview } from "react-icons/go";
-import IonsIMG from "../../assets/IONS.png";
-import { motion } from "motion/react";
 import React, { useState } from "react";
-import { FiArrowUpRight, FiArrowRight } from "react-icons/fi";
+import { motion } from "motion/react";
+import { FiArrowUpRight } from "react-icons/fi";
 
-const projectList = [
-  {
-    title: "IONS: The Gen-Z Way to Manage Electricity",
-    description:
-      "Helping households to manage their energy consumption more wisely and effectively with the help of Artificial Intelligent.",
-    tech: ["HTML", "React", "ChakraUI", "PostgreSQL", "Golang"],
-    image: IonsIMG,
-    imageALT: "IONS",
-  },
-  {
-    title: "IONS: The Gen-Z Way to Manage Electricity",
-    description:
-      "Helping households to manage their energy consumption more wisely and effectively with the help of Artificial Intelligent.",
-    tech: ["HTML", "React", "ChakraUI", "PostgreSQL", "Golang"],
-    image: IonsIMG,
-    imageALT: "IONS",
-  },
-  {
-    title: "IONS: The Gen-Z Way to Manage Electricity",
-    description:
-      "Helping households to manage their energy consumption more wisely and effectively with the help of Artificial Intelligent.",
-    tech: ["HTML", "React", "ChakraUI", "PostgreSQL", "Golang"],
-    image: IonsIMG,
-    imageALT: "IONS",
-  },
-  {
-    title: "IONS: The Gen-Z Way to Manage Electricity",
-    description:
-      "Helping households to manage their energy consumption more wisely and effectively with the help of Artificial Intelligent.",
-    tech: ["HTML", "React", "ChakraUI", "PostgreSQL", "Golang"],
-    image: IonsIMG,
-    imageALT: "IONS",
-  },
-  {
-    title: "IONS: The Gen-Z Way to Manage Electricity",
-    description:
-      "Helping households to manage their energy consumption more wisely and effectively with the help of Artificial Intelligent.",
-    tech: ["HTML", "React", "ChakraUI", "PostgreSQL", "Golang"],
-    image: IonsIMG,
-    imageALT: "IONS",
-  },
-];
+import { projects_ProjectList, techStack_Logo } from "../../portfolioContent";
+import { BackgroundBox } from "../BackgroundBox";
 
 function ProjectsComponent(props, ref) {
   return (
@@ -64,7 +20,7 @@ function ProjectsComponent(props, ref) {
         </h2>
       </div>
       <div className="grid h-fit w-full gap-12 md:grid-cols-6 lg:gap-4">
-        {projectList.map((project, index) => {
+        {projects_ProjectList.map((project, index) => {
           return <ProjectItem key={index} project={project} />;
         })}
       </div>
@@ -97,40 +53,34 @@ function ProjectItem(props) {
       <div className="flex flex-col gap-2">
         <h1 className="text-lg font-semibold xl:text-xl">{project.title}</h1>
         <h2 className="mb-3 font-light xl:text-lg">{project.description}</h2>
-        {/* <div className="flex flex-wrap gap-2 gap-y-2">
+        <div className="mb-5 flex flex-wrap gap-1">
           {project.tech.map((value, index) => (
             <TechTag key={index} name={value} />
           ))}
-        </div> */}
+        </div>
       </div>
-      <div className="flex items-center justify-between gap-4 text-sm">
-        <motion.a
-          href=""
-          className="flex gap-1 rounded-lg border border-brand-orange px-3 py-2"
-          whileHover={{
-            backgroundColor: "#FF933F",
-            borderColor: "#FF933F",
-            color: "#FFF",
-          }}
-        >
-          Live Demo
-          <div className="mt-1">
-            <FiArrowUpRight />
-          </div>
-        </motion.a>
-        <motion.button
-          className="flex gap-1 rounded-lg border border-brand-orange px-3 py-2"
-          whileHover={{
-            backgroundColor: "#FF933F",
-            borderColor: "#FF933F",
-            color: "#FFF",
-          }}
-        >
-          Details
-          <div className="mt-1">
-            <FiArrowRight />
-          </div>
-        </motion.button>
+      <div className="flex items-center justify-end gap-4 text-sm">
+        {Object.keys(project.link).map((key) => {
+          if (project.link[key] !== "") {
+            return (
+              <motion.a
+                key={key}
+                href={project.link[key]}
+                className="flex gap-1 rounded-lg border border-brand-orange px-3 py-2"
+                whileHover={{
+                  backgroundColor: "#FF933F",
+                  borderColor: "#FF933F",
+                  color: "#FFF",
+                }}
+              >
+                {key.charAt(0).toUpperCase() + key.slice(1)}
+                <div className="mt-1">
+                  <FiArrowUpRight />
+                </div>
+              </motion.a>
+            );
+          }
+        })}
       </div>
     </motion.div>
   );
@@ -139,20 +89,12 @@ function ProjectItem(props) {
 function TechTag(props) {
   const { name } = props;
 
-  const logos = {
-    ChakraUI: AssetsLogo.ChakraUiLogo,
-    Golang: AssetsLogo.GolangLogo,
-    HTML: AssetsLogo.HtmlLogo,
-    PostgreSQL: AssetsLogo.PostgreLogo,
-    React: AssetsLogo.ReactLogo,
-  };
-
-  const Logo = logos[name];
+  const Logo = techStack_Logo[name + "Logo"];
 
   return (
-    <div className="flex w-fit items-center gap-2 rounded-lg bg-gray-200 p-2 text-xs">
+    <div className="flex w-fit items-center gap-2 rounded-lg p-2 text-xs">
       <Logo className="h-4" />
-      <h3>{name}</h3>
+      <p>{name}</p>
     </div>
   );
 }

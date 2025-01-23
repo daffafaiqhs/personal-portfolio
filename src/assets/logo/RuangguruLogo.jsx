@@ -1,4 +1,4 @@
-export function Ruangguru(props) {
+export function RuangguruLogo(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

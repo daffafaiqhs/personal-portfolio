@@ -1,4 +1,4 @@
-import { DefaultNameLogo } from "../../assets";
+import { DefaultNameLogo } from "../../assets/logo";
 
 export function Footer(props) {
   return (

@@ -1,4 +1,4 @@
-export function ChakraUiLogo(props) {
+export function ChakraUILogo(props) {
   return (
     <svg
       viewBox="0 0 30 26"

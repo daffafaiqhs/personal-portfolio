@@ -1,8 +1,9 @@
+import React from "react";
 import { motion } from "motion/react";
+import { FiArrowDown } from "react-icons/fi";
+
 import { BackgroundBox } from "../BackgroundBox";
 import { HeroIconSVG } from "../../assets";
-import { FiArrowDown } from "react-icons/fi";
-import React from "react";
 
 function HeroComponent(props, ref) {
   return (

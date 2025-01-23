@@ -1,24 +1,11 @@
-import { FiArrowUpRight } from "react-icons/fi";
-import { LeftContactBg, RightContactBg } from "../../assets";
-import { motion } from "motion/react";
 import React from "react";
+import { motion } from "motion/react";
+import { FiArrowUpRight } from "react-icons/fi";
+
+import { personalInfo } from "../../portfolioContent";
+import { LeftContactBg, RightContactBg } from "../../assets";
 
 function ContactComponent(props, ref) {
-  const contactList = [
-    {
-      name: "Email",
-      link: "mailto:daffafaiqhs@gmail.com",
-    },
-    {
-      name: "Github",
-      link: "https://github.com/daffafaiqhs",
-    },
-    {
-      name: "Linkedin",
-      link: "https://linkedin.com/in/daffafaiqhs",
-    },
-  ];
-
   return (
     <section
       ref={ref}
@@ -35,18 +22,18 @@ function ContactComponent(props, ref) {
           I'm open to chat, collaborate, or just say hi.
         </h2>
         <div className="flex gap-4 py-7">
-          {contactList.map((contact, index) => (
+          {Object.keys(personalInfo).map((key) => (
             <motion.a
-              key={index}
+              key={key}
               className="flex gap-1 rounded-full bg-white px-2 py-3 text-sm font-thin sm:px-4 lg:text-base"
-              href={contact.link}
+              href={personalInfo[key]}
               target="blank"
               whileHover={{
                 backgroundColor: "#FF933F",
                 color: "#FFF",
               }}
             >
-              <p>{contact.name}</p>
+              <p>{key.charAt(0).toUpperCase() + key.slice(1)}</p>
               <div className="mt-1">
                 <FiArrowUpRight />
               </div>

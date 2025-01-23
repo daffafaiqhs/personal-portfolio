@@ -1,69 +1,16 @@
-import { BackgroundBox } from "../BackgroundBox";
-import { Ruangguru } from "../../assets/logo";
-import ruangguruCert from "../../assets/certificate/Ruangguru_Cert.jpg";
-import Pemrograman_Backend_Web_dengan_Golang from "../../assets/certificate/Pemrograman_Backend_Web_dengan_Golang.jpg";
+import React, { useState } from "react";
+import { motion } from "motion/react";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 import { FiArrowUpRight } from "react-icons/fi";
 import { MdZoomOutMap } from "react-icons/md";
-import { motion } from "motion/react";
 
-import { PhotoProvider, PhotoView } from "react-photo-view";
-
-import React, { useState } from "react";
-
-const certificates = [
-  ruangguruCert,
-  Pemrograman_Backend_Web_dengan_Golang,
-  Pemrograman_Backend_Web_dengan_Golang,
-  Pemrograman_Backend_Web_dengan_Golang,
-  Pemrograman_Backend_Web_dengan_Golang,
-  ruangguruCert,
-  Pemrograman_Backend_Web_dengan_Golang,
-  Pemrograman_Backend_Web_dengan_Golang,
-  Pemrograman_Backend_Web_dengan_Golang,
-  Pemrograman_Backend_Web_dengan_Golang,
-  ruangguruCert,
-  Pemrograman_Backend_Web_dengan_Golang,
-  Pemrograman_Backend_Web_dengan_Golang,
-  Pemrograman_Backend_Web_dengan_Golang,
-  Pemrograman_Backend_Web_dengan_Golang,
-];
+import {
+  experiences_EducationalExperience,
+  experiences_Certificates,
+} from "../../portfolioContent";
+import { BackgroundBox } from "../BackgroundBox";
 
 export function ExperiencesComponent(props, ref) {
-  const educationalExperience = [
-    {
-      organization: "PT. Ruang Raya Indonesia (Ruangguru)",
-      organizationLogo: <Ruangguru />,
-      duration: "9 Sep 2024 - 31 Dec 2024",
-      programName:
-        "Fullstack Golang & Ai: Dari Prinsip Dasar Hingga Aplikasi Praktis",
-      skillsAcquired: [
-        "Develop professional skills in communication, presentation, creative thinking, and strategic problem-solving.",
-        "Use terminal, Visual Studio Code, and Git for efficient project management and collaboration.",
-        "Build web applications with HTML, CSS, Tailwind, and Node.js, focusing on RESTful APIs and asynchronous programming.",
-        "Create Single Page Applications using ReactJS, mastering components, state, and deployment.",
-        "Develop backend systems with Golang, including data structures, algorithms, unit testing, and concurrency.",
-        "Design and manage relational databases while also learning about NoSQL database.",
-        "Understand Machine Learning fundamentals and integrate AI technologies into applications.",
-      ],
-    },
-    {
-      organization: "PT. Ruang Raya Indonesia (Ruangguru)",
-      organizationLogo: <Ruangguru />,
-      duration: "9 Sep 2024 - 31 Dec 2024",
-      programName:
-        "Fullstack Golang & Ai: Dari Prinsip Dasar Hingga Aplikasi Praktis",
-      skillsAcquired: [
-        "Develop professional skills in communication, presentation, creative thinking, and strategic problem-solving.",
-        "Use terminal, Visual Studio Code, and Git for efficient project management and collaboration.",
-        "Build web applications with HTML, CSS, Tailwind, and Node.js, focusing on RESTful APIs and asynchronous programming.",
-        "Create Single Page Applications using ReactJS, mastering components, state, and deployment.",
-        "Develop backend systems with Golang, including data structures, algorithms, unit testing, and concurrency.",
-        "Design and manage relational databases while also learning about NoSQL database.",
-        "Understand Machine Learning fundamentals and integrate AI technologies into applications.",
-      ],
-    },
-  ];
-
   const [state, setState] = useState("educations");
 
   const changeState = (newState) => {
@@ -110,13 +57,13 @@ export function ExperiencesComponent(props, ref) {
           className={`flex w-full flex-col gap-10 pt-4 lg:h-full lg:overflow-y-auto lg:pt-0`}
         >
           {state === "educations" ? (
-            educationalExperience.map((value, index) => (
+            experiences_EducationalExperience.map((value, index) => (
               <EducationalItem key={index} education={value} />
             ))
           ) : (
             <div className="grid grid-cols-1 place-items-center gap-5 md:grid-cols-3 xl:grid-cols-4">
               <PhotoProvider>
-                {certificates.map((item, index) => (
+                {experiences_Certificates.map((item, index) => (
                   <CertificationsItem key={index} src={item} />
                 ))}
               </PhotoProvider>

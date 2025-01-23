@@ -1,4 +1,4 @@
-export function HtmlLogo(props) {
+export function HTMLLogo(props) {
   return (
     <svg
       viewBox="0 0 364 412"

@@ -1,6 +1,8 @@
 export { HeroIconSVG } from "./HeroIconSVG"
 export { BurgerIcon } from "./BurgerIcon"
-export { ArrowIcon } from "./ArrowIcon"
-export { AnimatedNameLogo } from "./AnimatedNameLogo"
 export { LeftContactBg, RightContactBg } from "./ContactBg"
-export { DefaultNameLogo } from "./DefaultNameLogo"
+
+import PotraitIMG from "./PotraitIMG.png"
+export {
+    PotraitIMG
+};
