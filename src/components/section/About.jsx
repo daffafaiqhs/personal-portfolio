@@ -2,16 +2,21 @@ import { BackgroundBox } from "../BackgroundBox";
 import PotraitIMG from "../../assets/PotraitIMG.png";
 import { IoMailOpen, IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
 import { motion } from "motion/react";
-import { useState } from "react";
+import React, { useState } from "react";
 
-export function About() {
+function AboutComponent(props, ref) {
   return (
-    <section className="grid-rows-[1fr, auto] grid gap-4 md:grid-cols-2 md:grid-rows-1">
+    <section
+      ref={ref}
+      className="grid-rows-[1fr, auto] grid gap-4 md:grid-cols-2 md:grid-rows-1"
+    >
       <SelfPotrait />
       <Description />
     </section>
   );
 }
+
+export const About = React.forwardRef(AboutComponent);
 
 function SelfPotrait() {
   return (

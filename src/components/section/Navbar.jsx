@@ -1,54 +1,86 @@
+import { useState } from "react";
 import { BurgerIcon, AnimatedNameLogo } from "../../assets";
 import { motion } from "motion/react";
 
+const scrollTo = (itemName, itemRef, delaySecond) => {
+  // if (itemRef.current) {
+  const itemRefOffsetTop = itemName === "Home" ? 0 : itemRef.current?.offsetTop;
+  const offset = itemName === "Home" ? 0 : 100;
+
+  setTimeout(() => {
+    window.scrollTo({
+      top: itemRefOffsetTop - offset,
+      behavior: "smooth",
+    });
+  }, delaySecond * 1000);
+  // }
+};
+
 export function Navbar(props) {
+  const [atSection, setAtSection] = useState("Home");
+
   const navOpenDuration = 0.3;
 
   const navItems = [
     {
       name: "Home",
-      href: "",
+      ref: props.listRef.heroRef,
     },
     {
       name: "About",
-      href: "",
+      ref: props.listRef.aboutRef,
     },
     {
       name: "Experiences",
-      href: "",
+      ref: props.listRef.experiencesRef,
     },
     {
       name: "Projects",
-      href: "",
+      ref: props.listRef.projectsRef,
     },
     {
       name: "Contacts",
-      href: "",
+      ref: props.listRef.contactRef,
     },
   ];
 
+  const setNavState = () => {
+    if (!props.navIsOpen) {
+      scrollTo("Home", 0, 0);
+    }
+
+    setTimeout(
+      () => {
+        props.setNavIsOpen(!props.navIsOpen);
+      },
+      props.navIsOpen || window.scrollY === 0 ? 0 : 1000,
+    );
+  };
+
   return (
     <>
-      <div className="flex w-full items-center justify-between p-4 sm-md:w-[415px] md:w-auto md:p-8 2xl:w-2xl">
+      <div className="fixed start-0 z-50 flex w-full items-center justify-between p-4 backdrop-blur-sm sm:p-6 sm-md:start-auto sm-md:w-[415px] md:start-0 md:w-full md:p-7 2xl:start-auto 2xl:w-2xl">
         <div className="h-auto w-24 md:w-32 xl:w-36">
           <AnimatedNameLogo />
         </div>
         <nav className="hidden md:flex md:gap-6">
           {navItems.map((item, i) => (
-            <motion.a
+            <button
               key={i}
-              href={item.href}
-              className={`text-center ${i === 0 ? "font-bold" : ""}`.trim()}
-              whileHover={{ color: "#FF933F" }}
+              className={`text-center ${atSection === item.name ? "text-brand-orange" : ""}`.trim()}
+              onClick={() => {
+                scrollTo(item.name, item.ref, 0);
+                setAtSection(item.name);
+              }}
             >
               {item.name}
-            </motion.a>
+            </button>
           ))}
         </nav>
 
         <div
-          className="relative z-50 flex flex-col items-end justify-center gap-1 md:hidden"
-          onClick={() => props.setNavIsOpen(!props.navIsOpen)}
+          className="relative flex flex-col items-end justify-center gap-1 md:hidden"
+          onClick={setNavState}
         >
           <BurgerIcon navIsOpen={props.navIsOpen} />
         </div>
@@ -56,8 +88,11 @@ export function Navbar(props) {
 
       <MobileNavbar
         navIsOpen={props.navIsOpen}
+        setNavIsOpen={props.setNavIsOpen}
         navOpenDuration={navOpenDuration}
         navItems={navItems}
+        atSection={atSection}
+        setAtSection={setAtSection}
       />
     </>
   );
@@ -73,10 +108,14 @@ function MobileNavbar(props) {
 
   const navItemHTML = props.navItems.map((item, index) => {
     const tagHTML = (
-      <motion.a
+      <motion.button
         key={item.name}
-        href={item.href}
-        className={`${index === 0 ? "text-white" : ""} opacity-0 active:text-white`.trim()}
+        className={`flex flex-col opacity-0 active:text-white ${props.atSection === item.name ? "text-white" : ""}`.trim()}
+        onClick={() => {
+          props.setNavIsOpen(!props.navIsOpen);
+          scrollTo(item.name, item.ref, 0.5);
+          props.setAtSection(item.name);
+        }}
         animate={
           props.navIsOpen ? { y: 0, opacity: 1 } : { y: -20, opacity: 0 }
         }
@@ -87,9 +126,9 @@ function MobileNavbar(props) {
           duration: props.navIsOpen ? 0.6 : 0,
         }}
       >
-        <p className="text-lg"> {String(index + 1).padStart(2, "0")} </p>
+        <p className="w-fit text-lg"> {String(index + 1).padStart(2, "0")} </p>
         {item.name}
-      </motion.a>
+      </motion.button>
     );
 
     i += 0.2;
@@ -99,15 +138,13 @@ function MobileNavbar(props) {
 
   return (
     <motion.div
-      className="just absolute -bottom-96 left-0 right-0 top-0 z-40 hidden h-full w-full flex-col gap-9 overflow-hidden bg-black text-4xl text-stone-700 sm:text-5xl sm-md:items-center md:opacity-0"
+      className="absolute -bottom-96 left-0 right-0 top-0 z-40 hidden h-full w-full flex-col gap-9 overflow-hidden bg-black text-4xl text-stone-700 sm:text-5xl sm-md:items-center md:opacity-0"
       initial={{ y: -1 * screenHeight }}
       animate={
         props.navIsOpen
           ? {
               y: 0,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: "block",
             }
           : { y: -1 * screenHeight }
       }
@@ -115,7 +152,9 @@ function MobileNavbar(props) {
         duration: props.navOpenDuration,
       }}
     >
-      <nav className="flex flex-col gap-9">{navItemHTML}</nav>
+      <div className="flex h-full w-full items-center justify-center">
+        <nav className="flex flex-col gap-9">{navItemHTML}</nav>
+      </div>
     </motion.div>
   );
 }

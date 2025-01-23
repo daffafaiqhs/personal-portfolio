@@ -3,7 +3,7 @@ import * as AssetsLogo from "../../assets/logo";
 import { GoCodeReview } from "react-icons/go";
 import IonsIMG from "../../assets/IONS.png";
 import { motion } from "motion/react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { FiArrowUpRight, FiArrowRight } from "react-icons/fi";
 
 const projectList = [
@@ -49,9 +49,12 @@ const projectList = [
   },
 ];
 
-export function Projects() {
+function ProjectsComponent(props, ref) {
   return (
-    <BackgroundBox className="flex flex-col items-center gap-10 px-5 py-8">
+    <BackgroundBox
+      ref={ref}
+      className="flex flex-col items-center gap-10 px-5 py-8"
+    >
       <div className="flex w-fit flex-col text-center">
         <h1 className="mb-2 text-xl font-bold lg:text-2xl">
           My Latest Projects!
@@ -68,6 +71,8 @@ export function Projects() {
     </BackgroundBox>
   );
 }
+
+export const Projects = React.forwardRef(ProjectsComponent);
 
 function ProjectItem(props) {
   const [isHovered, setIsHovered] = useState(false);

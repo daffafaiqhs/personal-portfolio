@@ -2,10 +2,14 @@ import { motion } from "motion/react";
 import { BackgroundBox } from "../BackgroundBox";
 import { HeroIconSVG } from "../../assets";
 import { FiArrowDown } from "react-icons/fi";
+import React from "react";
 
-export function Hero() {
+function HeroComponent(props, ref) {
   return (
-    <BackgroundBox className="flex flex-col items-center gap-2 p-6 pb-0 md:relative md:flex-row md:items-start md:justify-around md:px-8 md:pt-7">
+    <BackgroundBox
+      className="flex flex-col items-center gap-2 p-6 pb-0 md:relative md:flex-row md:items-start md:justify-around md:px-8 md:pt-7"
+      ref={ref}
+    >
       <div className="flex flex-col items-center gap-2 md:items-start">
         <h1 className="text-center text-xs font-light md:hidden">
           Daffa's 3rd Year Informatics Student's Portfolio
@@ -40,3 +44,5 @@ export function Hero() {
     </BackgroundBox>
   );
 }
+
+export const Hero = React.forwardRef(HeroComponent);

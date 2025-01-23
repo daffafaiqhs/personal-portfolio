@@ -8,7 +8,7 @@ import { motion } from "motion/react";
 
 import { PhotoProvider, PhotoView } from "react-photo-view";
 
-import { useState, useCallback } from "react";
+import React, { useState } from "react";
 
 const certificates = [
   ruangguruCert,
@@ -28,7 +28,7 @@ const certificates = [
   Pemrograman_Backend_Web_dengan_Golang,
 ];
 
-export function Experiences() {
+export function ExperiencesComponent(props, ref) {
   const educationalExperience = [
     {
       organization: "PT. Ruang Raya Indonesia (Ruangguru)",
@@ -73,7 +73,10 @@ export function Experiences() {
   };
 
   return (
-    <BackgroundBox className="flex flex-col gap-4 p-6 lg:h-[690px] lg:gap-6">
+    <BackgroundBox
+      ref={ref}
+      className="flex flex-col gap-4 p-6 lg:h-[690px] lg:gap-6"
+    >
       <div>
         <h1 className="mb-2 text-xl font-bold lg:text-2xl">My Experiences!</h1>
         <p className="text-sm font-light md:text-base xl:text-lg">
@@ -90,13 +93,13 @@ export function Experiences() {
       <div className="flex flex-grow gap-4 lg:overflow-hidden">
         <div className="hidden lg:block lg:text-sm xl:text-base">
           <div
-            className={`${state === "educations" && "border-brand-yellow text-brand-orange"} mb-2 cursor-pointer text-nowrap rounded-lg border px-4 py-2`}
+            className={`mb-2 cursor-pointer text-nowrap rounded-lg border px-4 py-2 ${state === "educations" ? "border-brand-yellow text-brand-orange" : ""}`.trim()}
             onClick={() => changeState("educations")}
           >
             <p>Education & Practical Experience</p>
           </div>
           <div
-            className={`${state === "certifications" && "border-brand-yellow text-brand-orange"} cursor-pointer rounded-lg border px-4 py-2`}
+            className={`cursor-pointer rounded-lg border px-4 py-2 ${state === "certifications" ? "border-brand-yellow text-brand-orange" : ""}`.trim()}
             onClick={() => changeState("certifications")}
           >
             <p>Certifications</p>
@@ -124,6 +127,8 @@ export function Experiences() {
     </BackgroundBox>
   );
 }
+
+export const Experiences = React.forwardRef(ExperiencesComponent);
 
 function EducationalItem(props) {
   const { education } = props;
