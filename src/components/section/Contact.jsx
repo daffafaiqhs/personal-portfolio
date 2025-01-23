@@ -33,7 +33,7 @@ export function Contact() {
           {contactList.map((contact, index) => (
             <motion.a
               key={index}
-              className="flex rounded-full bg-white px-2 py-3 text-sm font-thin sm:px-4 lg:text-base"
+              className="flex gap-1 rounded-full bg-white px-2 py-3 text-sm font-thin sm:px-4 lg:text-base"
               href={contact.link}
               target="blank"
               whileHover={{
@@ -42,7 +42,9 @@ export function Contact() {
               }}
             >
               <p>{contact.name}</p>
-              <FiArrowUpRight />
+              <div className="mt-1">
+                <FiArrowUpRight />
+              </div>
             </motion.a>
           ))}
         </div>

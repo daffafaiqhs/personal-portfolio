@@ -1,10 +1,11 @@
 import { motion } from "motion/react";
 import { BackgroundBox } from "../BackgroundBox";
 import { HeroIconSVG } from "../../assets";
+import { FiArrowDown } from "react-icons/fi";
 
 export function Hero() {
   return (
-    <BackgroundBox className="flex flex-col items-center gap-2 p-6 pb-0 md:relative md:flex-row md:items-start md:justify-around md:rounded-[2.5rem] md:px-8 md:pt-7">
+    <BackgroundBox className="flex flex-col items-center gap-2 p-6 pb-0 md:relative md:flex-row md:items-start md:justify-around md:px-8 md:pt-7">
       <div className="flex flex-col items-center gap-2 md:items-start">
         <h1 className="text-center text-xs font-light md:hidden">
           Daffa's 3rd Year Informatics Student's Portfolio
@@ -25,24 +26,13 @@ export function Hero() {
           </div>
         </div>
         <motion.button
-          className="my-4 flex items-center justify-center gap-1 rounded-lg border border-gray-500 px-16 py-1 text-xs font-light sm:px-20 md:px-32 lg:px-40 lg:text-sm xl:px-56 xl:text-base"
+          className="my-4 flex items-center justify-center gap-2 rounded-lg border border-gray-500 px-16 py-1 text-xs font-light sm:px-20 md:px-32 lg:px-40 lg:text-sm xl:px-56 xl:text-base"
           whileHover={{
             borderColor: "#FF933F",
-            backgroundColor: "#FF933F",
-            color: "#FFF",
+            color: "#FF933F",
           }}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="15"
-            height="15"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="currentColor"
-              d="M12 5v12.25L17.25 12l.75.66l-6.5 6.5l-6.5-6.5l.75-.66L11 17.25V5z"
-            />
-          </svg>
+          <FiArrowDown />
           Who is Daffa Faiq?
         </motion.button>
       </div>
