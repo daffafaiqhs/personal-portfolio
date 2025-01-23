@@ -3,10 +3,30 @@ import { Ruangguru } from "../../assets/logo";
 import ruangguruCert from "../../assets/certificate/Ruangguru_Cert.jpg";
 import Pemrograman_Backend_Web_dengan_Golang from "../../assets/certificate/Pemrograman_Backend_Web_dengan_Golang.jpg";
 import { FiArrowUpRight } from "react-icons/fi";
+import { MdZoomOutMap } from "react-icons/md";
+import { motion } from "motion/react";
 
-import ImageViewer from "react-simple-image-viewer";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 
 import { useState, useCallback } from "react";
+
+const certificates = [
+  ruangguruCert,
+  Pemrograman_Backend_Web_dengan_Golang,
+  Pemrograman_Backend_Web_dengan_Golang,
+  Pemrograman_Backend_Web_dengan_Golang,
+  Pemrograman_Backend_Web_dengan_Golang,
+  ruangguruCert,
+  Pemrograman_Backend_Web_dengan_Golang,
+  Pemrograman_Backend_Web_dengan_Golang,
+  Pemrograman_Backend_Web_dengan_Golang,
+  Pemrograman_Backend_Web_dengan_Golang,
+  ruangguruCert,
+  Pemrograman_Backend_Web_dengan_Golang,
+  Pemrograman_Backend_Web_dengan_Golang,
+  Pemrograman_Backend_Web_dengan_Golang,
+  Pemrograman_Backend_Web_dengan_Golang,
+];
 
 export function Experiences() {
   const educationalExperience = [
@@ -83,13 +103,21 @@ export function Experiences() {
           </div>
         </div>
         <div className="hidden h-full w-3 border-r border-gray-300 lg:block" />
-        <div className="flex w-full flex-col gap-10 pt-4 lg:h-full lg:overflow-y-scroll lg:pt-0">
+        <div
+          className={`flex w-full flex-col gap-10 pt-4 lg:h-full lg:overflow-y-auto lg:pt-0`}
+        >
           {state === "educations" ? (
             educationalExperience.map((value, index) => (
               <EducationalItem key={index} education={value} />
             ))
           ) : (
-            <CertificationsItem />
+            <div className="grid grid-cols-1 place-items-center gap-5 md:grid-cols-3 xl:grid-cols-4">
+              <PhotoProvider>
+                {certificates.map((item, index) => (
+                  <CertificationsItem key={index} src={item} />
+                ))}
+              </PhotoProvider>
+            </div>
           )}
         </div>
       </div>
@@ -133,44 +161,36 @@ function EducationalItem(props) {
   );
 }
 
-function CertificationsItem() {
-  const certificates = [ruangguruCert, Pemrograman_Backend_Web_dengan_Golang];
-
-  const [currentImage, setCurrentImage] = useState(0);
-  const [isViewerOpen, setIsViewerOpen] = useState(false);
-
-  const openImageViewer = useCallback((index) => {
-    setCurrentImage(index);
-    setIsViewerOpen(true);
-  }, []);
-
-  const closeImageViewer = () => {
-    setCurrentImage(0);
-    setIsViewerOpen(false);
-  };
+function CertificationsItem(props) {
+  const { src } = props;
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-2 lg:justify-normal">
-      {certificates.map((src, index) => (
-        <img
-          src={src}
-          onClick={() => openImageViewer(index)}
-          width="270"
-          key={index}
-          style={{ margin: "2px" }}
-          alt=""
+    <PhotoView src={src}>
+      <motion.div
+        className="relative h-fit w-fit cursor-pointer"
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
+      >
+        <motion.div
+          className="absolute h-full w-full"
+          animate={{
+            backgroundColor: isHovered
+              ? "rgba(0, 0, 0, 0.6)"
+              : "rgba(0, 0, 0, 0)",
+          }}
         />
-      ))}
-
-      {isViewerOpen && (
-        <ImageViewer
-          src={certificates}
-          currentIndex={currentImage}
-          disableScroll={true}
-          closeOnClickOutside={true}
-          onClose={closeImageViewer}
-        />
-      )}
-    </div>
+        <motion.div
+          className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 transform flex-col items-center gap-2 text-center text-3xl text-white"
+          animate={{
+            opacity: isHovered ? 1 : 0,
+          }}
+        >
+          <MdZoomOutMap />
+          <p className="text-base">View Certificate</p>
+        </motion.div>
+        <img src={src} width="240" className="w-full" alt="" />
+      </motion.div>
+    </PhotoView>
   );
 }

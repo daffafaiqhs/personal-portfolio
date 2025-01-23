@@ -10,6 +10,8 @@ import {
   Footer,
 } from "./components";
 
+import "react-photo-view/dist/react-photo-view.css";
+
 function App() {
   const [navIsOpen, setNavIsOpen] = useState(false);
 

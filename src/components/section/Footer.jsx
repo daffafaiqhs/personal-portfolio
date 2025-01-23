@@ -22,7 +22,7 @@ export function Footer(props) {
           </a>
         </p>
         <p className="text-center text-xs font-light md:text-right">
-          Last updated on 20 January, 2025.
+          Last updated on January 20, 2025.
         </p>
       </div>
     </section>
