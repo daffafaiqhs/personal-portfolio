@@ -17,8 +17,6 @@ const scrollTo = (itemName, itemRef, delaySecond) => {
 };
 
 export function Navbar(props) {
-  const [atSection, setAtSection] = useState("Home");
-
   const navOpenDuration = 0.3;
 
   const navItems = [
@@ -65,16 +63,16 @@ export function Navbar(props) {
         </div>
         <nav className="hidden md:flex md:gap-6">
           {navItems.map((item, i) => (
-            <button
+            <motion.button
               key={i}
-              className={`text-center ${atSection === item.name ? "text-brand-orange" : ""}`.trim()}
+              className="text-center"
+              whileHover={{ color: "#FF933F", textDecoration: "underline" }}
               onClick={() => {
                 scrollTo(item.name, item.ref, 0);
-                setAtSection(item.name);
               }}
             >
               {item.name}
-            </button>
+            </motion.button>
           ))}
         </nav>
 
@@ -91,8 +89,6 @@ export function Navbar(props) {
         setNavIsOpen={props.setNavIsOpen}
         navOpenDuration={navOpenDuration}
         navItems={navItems}
-        atSection={atSection}
-        setAtSection={setAtSection}
       />
     </>
   );
@@ -110,11 +106,10 @@ function MobileNavbar(props) {
     const tagHTML = (
       <motion.button
         key={item.name}
-        className={`flex flex-col opacity-0 active:text-white ${props.atSection === item.name ? "text-white" : ""}`.trim()}
+        className="flex flex-col text-white opacity-0"
         onClick={() => {
           props.setNavIsOpen(!props.navIsOpen);
           scrollTo(item.name, item.ref, 0.5);
-          props.setAtSection(item.name);
         }}
         animate={
           props.navIsOpen ? { y: 0, opacity: 1 } : { y: -20, opacity: 0 }
