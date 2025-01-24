@@ -13,6 +13,20 @@ import {
 import "react-photo-view/dist/react-photo-view.css";
 import { useRef } from "react";
 
+const scrollTo = (itemName, itemRef, delaySecond) => {
+  // if (itemRef.current) {
+  const itemRefOffsetTop = itemName === "Home" ? 0 : itemRef.current?.offsetTop;
+  const offset = itemName === "Home" ? 0 : 100;
+
+  setTimeout(() => {
+    window.scrollTo({
+      top: itemRefOffsetTop - offset,
+      behavior: "smooth",
+    });
+  }, delaySecond * 1000);
+  // }
+};
+
 function App() {
   const [navIsOpen, setNavIsOpen] = useState(false);
   const heroRef = useRef(null);
@@ -37,9 +51,10 @@ function App() {
               projectsRef,
               contactRef,
             }}
+            scrollTo={scrollTo}
           />
           <div className="flex flex-col gap-4 pt-16 sm:pt-20 sm-md:w-sm-md md:w-auto md:pt-24 2xl:w-2xl">
-            <Hero ref={heroRef} />
+            <Hero ref={heroRef} scrollTo={scrollTo} aboutRef={aboutRef} />
             <About ref={aboutRef} />
             <Experiences ref={experiencesRef} />
             <TechStack />

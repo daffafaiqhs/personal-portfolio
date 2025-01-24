@@ -3,20 +3,6 @@ import { motion } from "motion/react";
 import { AnimatedNameLogo } from "../../assets/logo";
 import { BurgerIcon } from "../../assets/";
 
-const scrollTo = (itemName, itemRef, delaySecond) => {
-  // if (itemRef.current) {
-  const itemRefOffsetTop = itemName === "Home" ? 0 : itemRef.current?.offsetTop;
-  const offset = itemName === "Home" ? 0 : 100;
-
-  setTimeout(() => {
-    window.scrollTo({
-      top: itemRefOffsetTop - offset,
-      behavior: "smooth",
-    });
-  }, delaySecond * 1000);
-  // }
-};
-
 export function Navbar(props) {
   const navOpenDuration = 0.3;
 
@@ -45,7 +31,7 @@ export function Navbar(props) {
 
   const setNavState = () => {
     if (!props.navIsOpen) {
-      scrollTo("Home", 0, 0);
+      props.scrollTo("Home", 0, 0);
     }
 
     setTimeout(
@@ -69,7 +55,7 @@ export function Navbar(props) {
               className="relative text-center"
               whileHover={{ color: "#FF933F" }}
               onClick={() => {
-                scrollTo(item.name, item.ref, 0);
+                props.scrollTo(item.name, item.ref, 0);
               }}
             >
               {item.name}
@@ -90,6 +76,7 @@ export function Navbar(props) {
         setNavIsOpen={props.setNavIsOpen}
         navOpenDuration={navOpenDuration}
         navItems={navItems}
+        scrollTo={props.scrollTo}
       />
     </>
   );
@@ -110,7 +97,7 @@ function MobileNavbar(props) {
         className="flex flex-col text-white opacity-0"
         onClick={() => {
           props.setNavIsOpen(!props.navIsOpen);
-          scrollTo(item.name, item.ref, 0.5);
+          props.scrollTo(item.name, item.ref, 0.5);
         }}
         animate={
           props.navIsOpen ? { y: 0, opacity: 1 } : { y: -20, opacity: 0 }

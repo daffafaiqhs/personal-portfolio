@@ -36,6 +36,9 @@ function HeroComponent(props, ref) {
             borderColor: "#FF933F",
             color: "#FF933F",
           }}
+          onClick={() => {
+            props.scrollTo("About", props.aboutRef, 0);
+          }}
         >
           <FiArrowDown />
           Who is Daffa Faiq?
