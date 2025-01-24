@@ -136,8 +136,17 @@ export const experiences_EducationalExperience = [
 ];
 
 export const experiences_Certificates = [
-  certificate.RuangguruCert,
+  certificate.KeterampilanIntiCert,
+  certificate.RPLCert,
+  certificate.FrontendDasarCert,
+  certificate.ReactCert,
   certificate.GolangCert,
+  certificate.BasisDataCert,
+  certificate.KecerdasanBuatanCert,
+  certificate.AsmenCert,
+  certificate.RuangguruCert,
+  certificate.PesertaPibiti,
+  certificate.BestFPPibiti,
 ];
 
 export const techStack_Logo = {
