@@ -36,7 +36,7 @@ function ProjectItem(props) {
 
   return (
     <motion.div
-      className="col-span-6 flex flex-col gap-4 rounded md:col-span-3 lg:p-5 xl:col-span-2"
+      className="col-span-6 flex flex-col justify-between rounded md:col-span-3 lg:p-5 xl:col-span-2"
       animate={{
         outline: isHovered ? "2px solid #FF933F" : "none",
         boxShadow: isHovered ? "0 8px 16px rgba(0, 0, 0, 0.2)" : "none",
@@ -44,19 +44,22 @@ function ProjectItem(props) {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <img
-        src={project.image}
-        alt={project.imageALT}
-        className="aspect-video w-full object-cover"
-      />
+      <div>
+        <img
+          src={project.image}
+          alt={project.imageALT}
+          className="mb-6 aspect-video w-full rounded-lg object-cover"
+        />
 
-      <div className="flex flex-col gap-2">
-        <h1 className="text-lg font-semibold xl:text-xl">{project.title}</h1>
-        <h2 className="mb-3 font-light xl:text-lg">{project.description}</h2>
-        <div className="mb-5 flex flex-wrap gap-1">
-          {project.tech.map((value, index) => (
-            <TechTag key={index} name={value} />
-          ))}
+        <div className="flex flex-col gap-2">
+          <h1 className="text-lg font-semibold xl:text-xl">{project.title}</h1>
+          <h2 className="mb-3 font-light xl:text-lg">{project.description}</h2>
+          <p>Technologies used:</p>
+          <div className="mb-10 flex flex-wrap gap-1 xl:mb-14">
+            {project.tech.map((value, index) => (
+              <TechTag key={index} name={value} />
+            ))}
+          </div>
         </div>
       </div>
       <div className="flex items-center justify-end gap-4 text-sm">
@@ -88,8 +91,9 @@ function ProjectItem(props) {
 
 function TechTag(props) {
   const { name } = props;
+  const logoName = name.replace(" ", "");
 
-  const Logo = techStack_Logo[name + "Logo"];
+  const Logo = techStack_Logo[logoName + "Logo"];
 
   return (
     <div className="flex w-fit items-center gap-2 rounded-lg p-2 text-xs">

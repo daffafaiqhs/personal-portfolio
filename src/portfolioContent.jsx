@@ -153,8 +153,8 @@ export const techStack_Logo = {
   HTMLLogo: techLogo.HTMLLogo,
   CSSLogo: techLogo.CSSLogo,
   JavascriptLogo: techLogo.JavascriptLogo,
-  ReactLogo: techLogo.ReactLogo,
-  TailwindLogo: techLogo.TailwindLogo,
+  ReactJSLogo: techLogo.ReactJSLogo,
+  TailwindCSSLogo: techLogo.TailwindCSSLogo,
   ChakraUILogo: techLogo.ChakraUILogo,
   BootstrapLogo: techLogo.BootstrapLogo,
   GolangLogo: techLogo.GolangLogo,
@@ -164,16 +164,42 @@ export const techStack_Logo = {
   PostmanLogo: techLogo.PostmanLogo,
   FigmaLogo: techLogo.FigmaLogo,
   LaravelLogo: techLogo.LaravelLogo,
+  HuggingFaceLogo: techLogo.HuggingFaceLogo,
 };
 
 export const projects_ProjectList = [
   {
+    title: "Personal Portfolio v1.0",
+    description:
+      "This portfolio introduces my journey as an informatics student, offering a detailed overview of the skills, projects, and experiences I've gained throughout my academic and practical journey.",
+    tech: ["HTML", "ReactJS", "TailwindCSS"],
+    image: projectImage.CoverPersonalPortfolio,
+    imageALT: "personal portfolio cover",
+    link: { github: "a", demo: "a" },
+  },
+  {
     title: "IONS: The Gen-Z Way to Manage Electricity",
     description:
-      "Helping households to manage their energy consumption more wisely and effectively with the help of Artificial Intelligent.",
-    tech: ["HTML", "React", "ChakraUI", "PostgreSQL", "Golang"],
-    image: projectImage.IONS,
-    imageALT: "IONS",
+      "As part of the final project, the task involved creating a smart home energy management system (IONS) to help households manage their energy consumption more wisely and effectively, powered by Artificial Intelligence.",
+    tech: [
+      "HTML",
+      "ReactJS",
+      "ChakraUI",
+      "PostgreSQL",
+      "Golang",
+      "Hugging Face",
+    ],
+    image: projectImage.CoverIONS,
+    imageALT: "IONS: The Gen-Z Way to Manage Electricity cover",
+    link: { github: "a", demo: "a" },
+  },
+  {
+    title: "Ruangguru Student Portal",
+    description:
+      "As part of the final course project, the task involved creating a Student Portal to help manage student data efficiently, with features like adding, editing, deleting, and filtering information.",
+    tech: ["HTML", "ReactJS", "ChakraUI", "TailwindCSS"],
+    image: projectImage.CoverStudentPortal,
+    imageALT: "ruangguru student portal cover",
     link: { github: "a", demo: "a" },
   },
 ];

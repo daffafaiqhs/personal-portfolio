@@ -1,5 +1,9 @@
-import IONS from "./IONS.png"
+import CoverPersonalPortfolio from "./CoverPersonalPortfolio.png"
+import CoverIONS from "./CoverIONS.png"
+import CoverStudentPortal from "./CoverStudentPortal.png"
 
 export {
-    IONS
+    CoverPersonalPortfolio,
+    CoverIONS,
+    CoverStudentPortal,
 };
