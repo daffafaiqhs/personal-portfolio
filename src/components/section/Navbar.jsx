@@ -83,10 +83,12 @@ export function Navbar(props) {
 }
 
 function MobileNavbar(props) {
-  let screenHeight = Math.max(
-    document.documentElement.clientHeight || 0,
-    window.innerHeight || 0,
-  );
+  let screenHeight = window.visualViewport
+    ? window.visualViewport.height
+    : Math.max(
+        document.documentElement.clientHeight || 0,
+        window.innerHeight || 0,
+      );
 
   let i = 0;
 
@@ -121,7 +123,7 @@ function MobileNavbar(props) {
 
   return (
     <motion.div
-      className="absolute -bottom-96 left-0 right-0 top-0 z-40 hidden h-full w-full flex-col gap-9 overflow-hidden bg-black text-4xl text-stone-700 sm:text-5xl sm-md:items-center md:opacity-0"
+      className="absolute -bottom-96 left-0 right-0 top-0 z-40 hidden h-dvh w-full flex-col gap-9 overflow-hidden bg-black text-4xl text-stone-700 sm:text-5xl sm-md:items-center md:opacity-0"
       initial={{ y: -1 * screenHeight }}
       animate={
         props.navIsOpen
