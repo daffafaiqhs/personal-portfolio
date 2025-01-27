@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+Options -MultiViews
+RewriteEngine On
+
+# Allow direct access to static files (like favicon)
+RewriteCond %{REQUEST_URI} ^/favicon.ico$
+RewriteRule ^ /dist/favicon.ico [L]
+
+# Allow direct access to static files (like favicon)
+RewriteCond %{REQUEST_URI} ^/favicon.svg$
+RewriteRule ^ /dist/favicon.svg [L]
+
+# Serve files from the "assets" directory directly
+RewriteCond %{REQUEST_URI} ^/assets/
+RewriteRule ^assets/(.*)$ /dist/assets/$1 [L]
+
+# Handle client-side routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ /dist/index.html [QSA,L]
+</IfModule>
