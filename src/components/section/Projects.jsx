@@ -43,7 +43,7 @@ function ProjectItem(props) {
 
   return (
     <motion.div
-      className={`col-span-6 flex flex-col justify-between rounded md:col-span-3 md:min-w-[calc(33.333%-1rem)] md:flex-1 lg:min-w-[calc(50%-1rem)] lg:p-5 xl:col-span-2 xl:min-w-[calc(33.333%-1rem)] ${isOdd && isLastItem ? "md:max-w-[calc(50%-1rem)] xl:max-w-none" : ""}`.trim()}
+      className={`flex w-full flex-col justify-between rounded md:col-span-3 md:min-w-[calc(33.333%-1rem)] md:flex-1 lg:min-w-[calc(50%-1rem)] lg:p-5 xl:col-span-2 xl:min-w-[calc(33.333%-1rem)] ${isOdd && isLastItem ? "md:max-w-[calc(50%-1rem)] xl:max-w-none" : ""}`.trim()}
       animate={{
         outline: isHovered ? "2px solid #FF933F" : "none",
         boxShadow: isHovered ? "0 8px 16px rgba(0, 0, 0, 0.2)" : "none",
@@ -69,7 +69,7 @@ function ProjectItem(props) {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-end gap-4 text-sm">
+      <div className="flex flex-col items-center justify-end gap-4 text-xs sm:text-sm md:flex-row">
         {Object.keys(project.link)
           .filter((key) => project.link[key] !== "")
           .map((key) => (
@@ -77,7 +77,7 @@ function ProjectItem(props) {
               key={key}
               href={project.link[key]}
               target="_blank"
-              className="flex gap-1 rounded-lg border border-brand-orange px-3 py-2"
+              className="flex w-full justify-between gap-1 rounded-lg border border-brand-orange px-3 py-2 md:w-auto md:justify-normal"
               whileHover={{
                 backgroundColor: "#FF933F",
                 borderColor: "#FF933F",
