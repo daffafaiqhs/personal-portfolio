@@ -1,35 +1,71 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import {
+  Navbar,
+  Hero,
+  About,
+  Experiences,
+  TechStack,
+  Projects,
+  Contact,
+  Footer,
+} from "./components/section";
+
+import "react-photo-view/dist/react-photo-view.css";
+import { useRef } from "react";
+
+const scrollTo = (itemName, itemRef, delaySecond) => {
+  // if (itemRef.current) {
+  const itemRefOffsetTop = itemName === "Home" ? 0 : itemRef.current?.offsetTop;
+  const offset = itemName === "Home" ? 0 : 100;
+
+  setTimeout(() => {
+    window.scrollTo({
+      top: itemRefOffsetTop - offset,
+      behavior: "smooth",
+    });
+  }, delaySecond * 1000);
+  // }
+};
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [navIsOpen, setNavIsOpen] = useState(false);
+  const heroRef = useRef(null);
+  const aboutRef = useRef(null);
+  const experiencesRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div
+        className={`sm-md:flex sm-md:flex-col sm-md:items-center md:block 2xl:flex 2xl:flex-col 2xl:items-center ${navIsOpen ? "h-screen overflow-hidden" : ""}`.trim()}
+      >
+        <div className="mx-3 xl:mx-5">
+          <Navbar
+            navIsOpen={navIsOpen}
+            setNavIsOpen={setNavIsOpen}
+            listRef={{
+              heroRef,
+              aboutRef,
+              experiencesRef,
+              projectsRef,
+              contactRef,
+            }}
+            scrollTo={scrollTo}
+          />
+          <div className="flex flex-col gap-4 pt-16 sm:pt-20 sm-md:w-sm-md md:w-auto md:pt-24 2xl:w-2xl">
+            <Hero ref={heroRef} scrollTo={scrollTo} aboutRef={aboutRef} />
+            <About ref={aboutRef} />
+            <Experiences ref={experiencesRef} />
+            <TechStack />
+            <Projects ref={projectsRef} />
+          </div>
+        </div>
+        <Contact ref={contactRef} />
+        <Footer className="mx-3 xl:mx-5" />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
