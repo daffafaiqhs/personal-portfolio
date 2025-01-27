@@ -70,28 +70,26 @@ function ProjectItem(props) {
         </div>
       </div>
       <div className="flex items-center justify-end gap-4 text-sm">
-        {Object.keys(project.link).map((key) => {
-          if (project.link[key] !== "") {
-            return (
-              <motion.a
-                key={key}
-                href={project.link[key]}
-                target="_blank"
-                className="flex gap-1 rounded-lg border border-brand-orange px-3 py-2"
-                whileHover={{
-                  backgroundColor: "#FF933F",
-                  borderColor: "#FF933F",
-                  color: "#FFF",
-                }}
-              >
-                {key.charAt(0).toUpperCase() + key.slice(1)}
-                <div className="mt-1">
-                  <FiArrowUpRight />
-                </div>
-              </motion.a>
-            );
-          }
-        })}
+        {Object.keys(project.link)
+          .filter((key) => project.link[key] !== "")
+          .map((key) => (
+            <motion.a
+              key={key}
+              href={project.link[key]}
+              target="_blank"
+              className="flex gap-1 rounded-lg border border-brand-orange px-3 py-2"
+              whileHover={{
+                backgroundColor: "#FF933F",
+                borderColor: "#FF933F",
+                color: "#FFF",
+              }}
+            >
+              {key.charAt(0).toUpperCase() + key.slice(1)}
+              <div className="mt-1">
+                <FiArrowUpRight />
+              </div>
+            </motion.a>
+          ))}
       </div>
     </motion.div>
   );

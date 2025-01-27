@@ -175,7 +175,10 @@ export const projects_ProjectList = [
     tech: ["HTML", "ReactJS", "TailwindCSS"],
     image: projectImage.CoverPersonalPortfolio,
     imageALT: "personal portfolio cover",
-    link: { github: "a", demo: "a" },
+    link: {
+      github: "https://github.com/daffafaiqhs/personal-portfolio",
+      live: "https://daffaiq.com/",
+    },
   },
   {
     title: "IONS: The Gen-Z Way to Manage Electricity",
@@ -191,15 +194,23 @@ export const projects_ProjectList = [
     ],
     image: projectImage.CoverIONS,
     imageALT: "IONS: The Gen-Z Way to Manage Electricity cover",
-    link: { github: "a", demo: "a" },
+    link: {
+      github: "https://github.com/daffafaiqhs/ions",
+      "live (Frontend)": "https://ions.daffaiq.com/",
+      demo: "https://drive.google.com/file/d/1x2pn_VfSvDWR_5juuSbHgDQP1Hm4FSDB/view?usp=sharing",
+    },
   },
   {
     title: "Ruangguru Student Portal",
     description:
-      "As part of the final course project, the task involved creating a Student Portal to help manage student data efficiently, with features like adding, editing, deleting, and filtering information.",
+      "As part of the final course project, the task involved creating a Student Portal to help manage student data efficiently, with features like adding, editing, deleting, and filtering information using API from JSON-Server.",
     tech: ["HTML", "ReactJS", "ChakraUI", "TailwindCSS"],
     image: projectImage.CoverStudentPortal,
     imageALT: "ruangguru student portal cover",
-    link: { github: "a", demo: "a" },
+    link: {
+      github: "https://github.com/daffafaiqhs/student-portal",
+      "live (Frontend)": "https://studentportal.daffaiq.com/",
+      demo: "https://drive.google.com/file/d/1Bpr3n178F14UltxffcNBhWI8E20LlRrT/view?usp=sharing",
+    },
   },
 ];
