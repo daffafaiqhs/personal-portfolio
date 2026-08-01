@@ -9,7 +9,7 @@ function ContactComponent(props, ref) {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden sm-md:w-sm-md md:w-auto 2xl:w-2xl"
+      className="relative scroll-mt-40 overflow-hidden sm-md:w-sm-md md:w-auto 2xl:w-2xl"
       id="Contact"
     >
       <LeftContactBg className="absolute -start-14 -top-16 size-[200px] sm:-top-20 sm:size-[220px] md:-start-40 md:size-[450px] lg:-start-56 lg:size-[600px] xl:-start-28 2xl:-start-14 2xl:-top-9" />

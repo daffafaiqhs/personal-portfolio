@@ -1,5 +1,6 @@
-import { RuangguruLogo, UPNLogo } from "./assets/logo";
+import { GSILogo, RuangguruLogo, UPNLogo, BNSPLogo } from "./assets/logo";
 import * as certificate from "./assets/certificate";
+import * as images from "./assets/images";
 import * as techLogo from "./assets/logo/tech";
 import * as projectImage from "./assets/projects";
 
@@ -11,129 +12,260 @@ export const personalInfo = {
 
 export const about_IntroductionMessage = [
   <>
-    I'm just here to make websites that{" "}
-    <span className="font-bold text-brand-orange">don't crash</span> (too often)
-    and figure out why my{" "}
-    <span className="font-bold text-brand-orange">React useEffect</span> is
-    running <span className="font-bold text-brand-orange">too many times</span>{" "}
-    when I only wanted it{" "}
-    <span className="font-bold text-brand-orange">once</span>.
+    I'm a fresh Informatics graduate based in{" "}
+    <span className="font-bold text-brand-orange">Surabaya, Indonesia</span>,
+    passionate about building{" "}
+    <span className="font-bold text-brand-orange">web</span>,{" "}
+    <span className="font-bold text-brand-orange">mobile</span>,{" "}
+    <span className="font-bold text-brand-orange">backend</span>, and{" "}
+    <span className="font-bold text-brand-orange">AI</span> solutions.
   </>,
+
   <>
-    Most of the times, I'm caught between{" "}
-    <span className="font-bold text-brand-orange">JavaScript</span> telling me
-    my function is{" "}
-    <span className="font-bold text-brand-orange">not defined</span>—even though
-    I <span className="font-bold text-brand-orange">defined</span> it a minute
-    ago and <span className="font-bold text-brand-orange">Go</span> complaining
-    because a function returned{" "}
-    <span className="font-bold text-brand-orange">two values</span> when I only
-    asked for <span className="font-bold text-brand-orange">one</span>.
+    Hello! I'm a fresh Informatics graduate based in{" "}
+    <span className="font-bold text-brand-orange">Surabaya, Indonesia</span>,
+    where I spend most of my time turning ideas into{" "}
+    <span className="font-bold text-brand-orange">web</span>,{" "}
+    <span className="font-bold text-brand-orange">mobile</span>,{" "}
+    <span className="font-bold text-brand-orange">backend</span>, and{" "}
+    <span className="font-bold text-brand-orange">AI</span> applications that
+    are built to solve real problems.
   </>,
+
   <>
-    Hey there! I'm a{" "}
+    Hey there! I'm a fresh Informatics graduate from UPN Veteran Jawa Timur
+    based in{" "}
+    <span className="font-bold text-brand-orange">Surabaya, Indonesia</span>{" "}
+    with a passion for software engineering. I enjoy building{" "}
+    <span className="font-bold text-brand-orange">modern web applications</span>
+    , creating{" "}
     <span className="font-bold text-brand-orange">
-      3rd-year Informatics student
-    </span>{" "}
-    from UPN Veteran Jawa Timur who's diving headfirst into the world of web
-    development. My journey has been a rollercoaster of{" "}
-    <span className="font-bold text-brand-orange">
-      exciting projects and endless learning
+      cross platform mobile apps
     </span>
-    . My dream is to create web applications that are as reliable as my matcha
-    addiction.
+    , developing{" "}
+    <span className="font-bold text-brand-orange">backend services</span>, and
+    exploring{" "}
+    <span className="font-bold text-brand-orange">artificial intelligence</span>{" "}
+    through practical projects. Along the way, I've worked with{" "}
+    <span className="font-bold text-brand-orange">
+      React, React Native, Flutter, Go, FastAPI, TensorFlow,
+    </span>{" "}
+    and more .
   </>,
+
   <>
-    Hiyaa! I'm a{" "}
+    I’m a{" "}
     <span className="font-bold text-brand-orange">
-      3rd-year Informatics student
+      fresh Informatics graduate
     </span>{" "}
-    from UPN Veteran Jawa Timur exploring the exciting world of web development.
-    The journey of becoming a fullstack developer is{" "}
-    <span className="font-bold text-brand-orange">never linear</span>, but it's
-    always <span className="font-bold text-brand-orange">rewarding</span>.
-    Fueled by curiosity, creativity, and an occasional cup of mathca, I'm
-    excited to keep learning, building, and hopefully avoiding those late-night{" "}
-    <span className="font-bold text-brand-orange">debugging marathons!</span>
+    based in{" "}
+    <span className="font-bold text-brand-orange">Surabaya, Indonesia</span>. I
+    have an unhealthy habit of noticing when a button is one pixel off, an
+    animation feels too fast, or a layout just doesn't look right. While I enjoy
+    building{" "}
+    <span className="font-bold text-brand-orange">
+      web, mobile, backend, and AI
+    </span>{" "}
+    applications, what I enjoy even more is refining them until they feel
+    natural to use. Outside of coding, I'm always exploring new technologies,
+    experimenting with side projects, and finding better ways to build software
+    that people genuinely enjoy using.
   </>,
+
   <>
-    Greetings! I'm a{" "}
+    Greetings! I'm a fresh Informatics graduate based in{" "}
+    <span className="font-bold text-brand-orange">Surabaya, Indonesia</span>,
+    with a passion for building complete software solutions . I enjoy taking an
+    idea from the first sketch to a finished product by combining{" "}
     <span className="font-bold text-brand-orange">
-      3rd-year Informatics student
-    </span>{" "}
-    from UPN Veteran Jawa Timur on an adventure through the world of web
-    development. I'm passionate about creating{" "}
-    <span className="font-bold text-brand-orange">web applications</span> that
-    are both{" "}
-    <span className="font-bold text-brand-orange">
-      functional and enjoyable
-    </span>{" "}
-    to use. Whether it's{" "}
-    <span className="font-bold text-brand-orange">
-      designing interactive user interfaces
+      intuitive user interfaces
     </span>
-    , building{" "}
-    <span className="font-bold text-brand-orange">efficient backends</span>, or
-    spending way too long trying to figure out why my{" "}
-    <span className="font-bold text-brand-orange">API</span> insists on
-    returning a <span className="font-bold text-brand-orange">404</span> when
-    the resource is definitely there, I'm always up for the challenge. For me,
-    development isn't just about writing code; it's about creating tools and
-    experiences that{" "}
+    ,{" "}
     <span className="font-bold text-brand-orange">
-      genuinely make a difference
-    </span>{" "}
-    for users while making new friends along the way.
+      reliable backend systems
+    </span>
+    ,{" "}
+    <span className="font-bold text-brand-orange">
+      cross platform mobile applications
+    </span>
+    , and{" "}
+    <span className="font-bold text-brand-orange">AI-powered features</span>.
+    While I enjoy solving technical challenges, I probably spend just as much
+    time refining the small details, polishing interactions, improving
+    responsiveness, and making sure an application feels as good as it
+    functions. To me, great software isn't measured only by{" "}
+    <span className="font-bold text-brand-orange">clean code</span>, but by how
+    naturally people can use it. I'm always excited to learn new technologies,
+    collaborate with others, and keep building products that create a{" "}
+    <span className="font-bold text-brand-orange">meaningful impact</span>.
   </>,
 ];
 
-export const experiences_EducationalExperience = [
-  {
-    organization: "PT. Ruang Raya Indonesia (Ruangguru)",
-    organizationLogo: <RuangguruLogo />,
-    duration: "9 Sep 2024 - 31 Dec 2024",
-    programName:
-      "Fullstack Golang & Ai: Dari Prinsip Dasar Hingga Aplikasi Praktis",
-    description: (
-      <>
-        For four months, I participated in the{" "}
-        <b>Independent Certified Study Program</b> under the Kampus Merdeka
-        initiative, organized by the Ministry of Education, Culture, Research,
-        and Technology. One of the program's partners, PT. Ruang Raya Indonesia
-        (Ruangguru), hosted the Ruangguru CAMP program. Through this program, I
-        delved into the{" "}
-        <b>Fullstack Golang & Ai: Dari Prinsip Dasar Hingga Aplikasi Praktis</b>{" "}
-        class. The learning experience in this program included:
-      </>
-    ),
-    skillsAcquired: [
-      "Develop professional skills in communication, presentation, creative thinking, and strategic problem-solving through Keterampilan Inti subject.",
-      "Use terminal, Visual Studio Code, and Git for efficient project management and collaboration through Rekayasa Piranti Lunak subject.",
-      "Build web applications with HTML, CSS, Tailwind, and Node.js, focusing on RESTful APIs and asynchronous programming through Pemrograman Frontend Web Dasar subject.",
-      "Create Single Page Applications using ReactJS, mastering components, state, and deployment through Pemrograman Frontend dengan React.",
-      "Develop backend systems with Golang, including data structures, algorithms, unit testing, and concurrency through Pemrograman Backend Web dengan Golang.",
-      "Design and manage relational databases while also learning about NoSQL database through Sistem Manajemen dan Teknologi Basis Data subject.",
-      "Understand Machine Learning fundamentals and integrate AI technologies into applications throught Menguasai Teknologi Artificial Intelligence subject.",
-    ],
-  },
-  {
-    organization: "Universitas Pembangunan Nasional Veteran Jawa Timur",
-    organizationLogo: <img src={UPNLogo} alt="Logo UPN Jawa Timur" />,
-    duration: "2022  - NOW",
-    programName: "Informatics Program Study",
-    description: "My learning focus includes:",
-    skillsAcquired: [
-      "Studied subjects like Pancasila, Agama Islam, Bahasa Indonesia, Bahasa Inggris, Kewarganegaraan, and Bela Negara to develop strong ethical values and effective communication abilities.",
-      "Studied subjects like Matematika Komputasi, Aljabar Linier & Matrik, and Matematika Diskrit to build a solid mathematical foundation for problem-solving.",
-      "Learned the basics of computing through subjects like Arsitektur Komputer, Sistem & Teknologi Informasi, and Sistem Operasi.",
-      "Mastered programming skills through Algoritma & Pemrograman, Pemrograman Lanjut, Pemrograman Web, and Pemrograman Berorientasi Objek.",
-      "Developed expertise in Pemrograman Web, Kecerdasan Buatan, Jaringan Komputer, Desain Antarmuka, and Rekayasa Perangkat Lunak.",
-      "Studied data management and analysis through subjects like Struktur Data, Basis Data, and Basis Data Lanjut.",
-      "Enhanced leadership and entrepreneurial skills through Kewirausahaan, Kepemimpinan, and Etika & Kompetensi Informatika.",
-      "Learned systems and design through subjects like Analisis & Desain Sistem.",
-    ],
-  },
-];
+export const experiences = {
+  work_experiences: [
+    {
+      organization: "PT. Greatsoft Solusi Indonesia",
+      organizationLogo: (
+        <img src={GSILogo} alt="Logo PT. Greatsoft Solusi Indonesia" />
+      ),
+      duration: "Feb 2025 - May 2025",
+      additionalDurationInfo: "",
+      programName: "Software Developer",
+      additionalInfo: "Internship",
+      description: (
+        <>
+          Throughout this internship, I strengthened my technical skills and
+          applied the knowledge I gained at university by working on{" "}
+          <b>real world mobile application development projects</b>. Beyond the
+          technical experience, I had the opportunity to <b>collaborate</b> with
+          talented professionals, <b>gain valuable insights</b> into modern
+          software development practices, and <b>deepen my understanding</b> of
+          teamwork, communication, and problem solving in a professional
+          environment. This experience{" "}
+          <b>
+            significantly enhanced both my technical expertise and professional
+            growth
+          </b>
+          . Some of my key responsibilities and contributions included:
+        </>
+      ),
+      skillsAcquired: [
+        "Developed cross platform mobile applications using Flutter with a focus on building responsive and maintainable user interfaces.",
+        "Designed user interfaces and translated UI/UX designs into functional mobile screens using Figma and Flutter.",
+        "Integrated RESTful APIs using the Dio library to fetch, send, and synchronize application data.",
+        "Implemented local data persistence using SQLite for offline storage and efficient data management.",
+        "Built and maintained application features including dashboards, monitoring modules, and digital forms.",
+        "Applied state management, asynchronous programming, and error handling to ensure smooth application performance.",
+        "Collaborated with team members using Git and participated in the software development lifecycle, including feature development, testing, and debugging.",
+      ],
+      attachments: [images.LastDayGSI, certificate.GSICert],
+    },
+    {
+      organization: "PT. Ruang Raya Indonesia (Ruangguru)",
+      organizationLogo: <RuangguruLogo />,
+      duration: "9 Sep 2024 - 31 Dec 2024",
+      additionalDurationInfo: "",
+      programName: "Mentor Assistant",
+      additionalInfo: "",
+      description: (
+        <>
+          During the Ruangguru CAMP program under the Kampus Merdeka initiative,
+          I was also appointed as a Mentor Assistant, where I had the
+          opportunity to <b>support fellow participants</b> throughout their
+          learning journey. This role helped me develop my{" "}
+          <b>communication and mentoring abilities</b> while reinforcing my own
+          understanding of the course materials. It was a valuable experience
+          that contributed significantly to my technical growth and professional
+          development. Some of my key responsibilities and contributions
+          included:
+        </>
+      ),
+      skillsAcquired: [
+        "Facilitated technical discussions and troubleshooting sessions, helping mentees debug issues and strengthen their problem solving skills.",
+        "Reviewed mentees' projects and source code, providing constructive feedback to improve code quality, best practices, and overall understanding.",
+        "Monitored mentees' learning progress, identified challenges they encountered, and reported updates to the Ruangguru team to ensure appropriate guidance and support.",
+      ],
+      attachments: [
+        images.AsmenSessionRuangguru,
+        certificate.AsmenCert,
+        certificate.RekomendasiAsmen,
+      ],
+    },
+  ],
+  educations: [
+    {
+      organization: "Universitas Pembangunan Nasional Veteran Jawa Timur",
+      organizationLogo: <img src={UPNLogo} alt="Logo UPN Jawa Timur" />,
+      duration: "2022  - 2026",
+      programName: "Bachelor of Informatics",
+      additionalInfo: "Grade 3.92 out of 4.00",
+      description: "My learning focus includes:",
+      skillsAcquired: [
+        "Mastered mobile application development using React Native, including component based architecture, navigation, and state management.",
+        "Developed web applications using HTML, CSS, and JavaScript with interactive user interfaces.",
+        "Built strong programming and problem solving skills through Algoritma & Pemrograman, Pemrograman Lanjut, and Pemrograman Berorientasi Objek.",
+        "Applied data organization and algorithmic problem solving using Struktur Data.",
+        "Designed and managed relational databases through Basis Data and Basis Data Lanjut using MySQL, including database modeling, normalization, SQL queries, and optimization.",
+        "Designed intuitive and user centered interfaces using Figma, including wireframing, prototyping, and UI design principles.",
+        "Applied Artificial Intelligence and Machine Learning concepts using Python for model development, and predictive solutions.",
+        "Learned software engineering principles through Rekayasa Perangkat Lunak and Analisis & Desain Sistem.",
+        "Applied project planning, collaboration, and software development workflows through Manajemen Proyek.",
+      ],
+      attachments: [],
+    },
+    {
+      organization: "PT. Ruang Raya Indonesia (Ruangguru)",
+      organizationLogo: <RuangguruLogo />,
+      duration: "9 Sep 2024 - 31 Dec 2024",
+      programName:
+        "Fullstack Golang & Ai: Dari Prinsip Dasar Hingga Aplikasi Praktis",
+      additionalInfo: "Grade 99.01 out of 100",
+      description: (
+        <>
+          For four months, I participated in the{" "}
+          <b>Independent Certified Study Program</b> under the Kampus Merdeka
+          initiative, organized by the Ministry of Education, Culture, Research,
+          and Technology. One of the program's partners, PT. Ruang Raya
+          Indonesia (Ruangguru), hosted the Ruangguru CAMP program. Through this
+          program, I delved into the{" "}
+          <b>
+            Fullstack Golang & Ai: Dari Prinsip Dasar Hingga Aplikasi Praktis
+          </b>{" "}
+          class. The learning experience in this program included:
+        </>
+      ),
+      skillsAcquired: [
+        "Develop professional skills in communication, presentation, creative thinking, and strategic problem-solving through Keterampilan Inti subject.",
+        "Use terminal, Visual Studio Code, and Git for efficient project management and collaboration through Rekayasa Piranti Lunak subject.",
+        "Build web applications with HTML, CSS, Tailwind, and Node.js, focusing on RESTful APIs and asynchronous programming through Pemrograman Frontend Web Dasar subject.",
+        "Create Single Page Applications using ReactJS, mastering components, state, and deployment through Pemrograman Frontend dengan React.",
+        "Develop backend systems with Golang, including data structures, algorithms, unit testing, and concurrency through Pemrograman Backend Web dengan Golang.",
+        "Design and manage relational databases while also learning about NoSQL database through Sistem Manajemen dan Teknologi Basis Data subject.",
+        "Understand Machine Learning fundamentals and integrate AI technologies into applications throught Menguasai Teknologi Artificial Intelligence subject.",
+      ],
+      attachments: [
+        images.FPPresentationRuangguru,
+        certificate.RuangguruCert,
+        images.SuratKelulusanRuangguru,
+        // certificate.KeterampilanIntiCert,
+        // certificate.RPLCert,
+        // certificate.FrontendDasarCert,
+        // certificate.ReactCert,
+        // certificate.GolangCert,
+        // certificate.BasisDataCert,
+        // certificate.KecerdasanBuatanCert,
+      ],
+    },
+  ],
+  certifications: [
+    {
+      organization: "Badan Nasional Sertifikasi Profesi (BNSP)",
+      organizationLogo: (
+        <img src={BNSPLogo} alt="Logo Badan Nasional Sertifikasi Profesi" />
+      ),
+      duration: "",
+      additionalDurationInfo: "",
+      programName: "Junior Web Programmer",
+      additionalInfo: "",
+      description: (
+        <>
+          Successfully obtained the Junior Web Programmer professional
+          certification issued by the Badan Nasional Sertifikasi Profesi (BNSP),
+          demonstrating competency in fundamental web development concepts and
+          industry standard programming practices. The certification validates
+          my ability to develop web applications by applying software
+          development principles, implementing programming logic, managing
+          databases, and following professional standards in accordance with
+          Indonesia's national competency framework.
+        </>
+      ),
+      skillsAcquired: [],
+      attachments: [certificate.BNSPCert],
+    },
+  ],
+};
+
+export const experiences_EducationalExperience = [];
 
 export const experiences_Certificates = [
   certificate.KeterampilanIntiCert,
@@ -156,34 +288,110 @@ export const techStack_Logo = {
   ReactJSLogo: techLogo.ReactJSLogo,
   TailwindCSSLogo: techLogo.TailwindCSSLogo,
   ChakraUILogo: techLogo.ChakraUILogo,
-  BootstrapLogo: techLogo.BootstrapLogo,
+  FlutterLogo: techLogo.FlutterLogo,
+  // BootstrapLogo: techLogo.BootstrapLogo,
   GolangLogo: techLogo.GolangLogo,
   PostgreSQLLogo: techLogo.PostgreSQLLogo,
-  VscLogo: techLogo.VscLogo,
-  GithubLogo: techLogo.GithubLogo,
-  PostmanLogo: techLogo.PostmanLogo,
+  MySQLLogo: techLogo.MySQLLogo,
+  // VscLogo: techLogo.VscLogo,
+  // GithubLogo: techLogo.GithubLogo,
+  // PostmanLogo: techLogo.PostmanLogo,
   FigmaLogo: techLogo.FigmaLogo,
-  LaravelLogo: techLogo.LaravelLogo,
+  // LaravelLogo: techLogo.LaravelLogo,
+  PythonLogo: techLogo.PythonLogo,
   HuggingFaceLogo: techLogo.HuggingFaceLogo,
 };
 
 export const projects_ProjectList = [
   {
-    title: "Personal Portfolio v1.0",
+    title: "Browser Extension for Cyberbullying Detection",
     description:
-      "This portfolio introduces my journey as an informatics student, offering a detailed overview of the skills, projects, and experiences I've gained throughout my academic and practical journey.",
+      "This project is part of my undergraduate thesis, focusing on the development of a browser extension for Instagram that applies a machine learning based cyberbullying detection model in real time. The goal was to transform the research into a functional application, demonstrating its practicality and potential for everyday use.",
+    tech: ["HTML", "CSS", "Javascript"],
+    image: projectImage.CoverBrowserExtension,
+    imageALT: "Cyberbullying Detection Browser Extension Cover",
+    links: [
+      {
+        type: "github",
+        url: "https://github.com/daffafaiqhs/personal-portfolio",
+        locked: true,
+        title: "Limited Access",
+        message:
+          "I'm sorry but the item you are trying to access is restricted because it contains functionality that could be misused outside its intended purpose. Please contact me below if you would like to request access to the source code.",
+        provideContactButton: true
+      },
+      {
+        type: "Demo",
+        url: "https://drive.google.com/file/d/1RgwKj0udvb7iMokmtYgkn_sh7OPps2gA/view?usp=sharing",
+        locked: false,
+        title: "Not Published",
+        message:
+          "I'm sorry, but the journal article for this project has not yet been published. Please check back later.",
+        provideContactButton: false
+      },
+      {
+        type: "Journal Article",
+        url: "https://github.com/daffafaiqhs/personal-portfolio",
+        locked: true,
+        title: "Not Published",
+        message:
+          "I'm sorry, but the journal article for this project has not yet been published. Please check back later.",
+        provideContactButton: false
+      },
+    ],
+  },
+  {
+    title: "Machine Learning for Cyberbullying Detection",
+    description:
+      "This undergraduate thesis develops a BiLSTM based model for bilingual cyberbullying detectionachieving an accuracy of 95.97%. The model is enhanced with LIME to provide interpretable predictions by highlighting the words or phrases that influence each prediction.",
+    tech: ["Python"],
+    image: projectImage.CoverModel,
+    imageALT: "Cyberbullying Detection Model Cover",
+    links: [
+      {
+        type: "github",
+        url: "https://github.com/daffafaiqhs/personal-portfolio",
+        locked: true,
+        title: "Limited Access",
+        message:
+          "I'm sorry but the item you are trying to access is currently under an academic embargo. Source code access is restricted until the embargo period ends. Please contact me below for inquiries.",
+        provideContactButton: true
+      },
+      {
+        type: "Journal Article",
+        url: "https://github.com/daffafaiqhs/personal-portfolio",
+        locked: true,
+        title: "Not Published",
+        message:
+          "I'm sorry, but the journal article for this project has not yet been published. Please check back later.",
+        provideContactButton: false
+      },
+    ],
+  },
+  {
+    title: "Personal Portfolio v1.1",
+    description:
+      "This portfolio showcases my journey as an aspiring Software Engineer, providing a comprehensive overview of the skills, projects, and experiences I have gained throughout my academic and professional journey.",
     tech: ["HTML", "ReactJS", "TailwindCSS"],
     image: projectImage.CoverPersonalPortfolio,
     imageALT: "personal portfolio cover",
-    link: {
-      github: "https://github.com/daffafaiqhs/personal-portfolio",
-      live: "https://daffaiq.com/",
-    },
+    links: [
+      {
+        type: "github",
+        url: "https://github.com/daffafaiqhs/personal-portfolio",
+        locked: false,
+      },
+      {
+        type: "live",
+        url: "https://daffaiq.com/",
+        locked: false,
+      },
+    ],
   },
   {
     title: "IONS: The Gen-Z Way to Manage Electricity",
     description:
-      "As part of the final project, the task involved creating a smart home energy management system (IONS) to help households manage their energy consumption more wisely and effectively, powered by Artificial Intelligence.",
+      "As part of the final project for the Ruangguru CAMP program, I developed IONS, a smart home energy management system that helps households monitor and optimize their energy consumption more effectively using Artificial Intelligence.",
     tech: [
       "HTML",
       "ReactJS",
@@ -194,23 +402,47 @@ export const projects_ProjectList = [
     ],
     image: projectImage.CoverIONS,
     imageALT: "IONS: The Gen-Z Way to Manage Electricity cover",
-    link: {
-      github: "https://github.com/daffafaiqhs/ions",
-      "live (Frontend)": "https://ions.daffaiq.com/",
-      demo: "https://drive.google.com/file/d/1x2pn_VfSvDWR_5juuSbHgDQP1Hm4FSDB/view?usp=sharing",
-    },
+    links: [
+      {
+        type: "github",
+        url: "https://github.com/daffafaiqhs/ions",
+        locked: false,
+      },
+      // {
+      //   type: "live (Frontend)",
+      //   url: "https://ions.daffaiq.com/",
+      //   locked: false,
+      // },
+      {
+        type: "demo",
+        url: "https://drive.google.com/file/d/1x2pn_VfSvDWR_5juuSbHgDQP1Hm4FSDB/view?usp=sharing",
+        locked: false,
+      },
+    ],
   },
   {
     title: "Ruangguru Student Portal",
     description:
-      "As part of the final course project, the task involved creating a Student Portal to help manage student data efficiently, with features like adding, editing, deleting, and filtering information using API from JSON-Server.",
+      "As one of the final course project for the Ruangguru CAMP program, I built a Student Portal web application to streamline student data management. The application implements CRUD functionality, allowing users to add, edit, delete, and filter student records, and communicates with a JSON Server API to retrieve and manage data.",
     tech: ["HTML", "ReactJS", "ChakraUI", "TailwindCSS"],
     image: projectImage.CoverStudentPortal,
     imageALT: "ruangguru student portal cover",
-    link: {
-      github: "https://github.com/daffafaiqhs/student-portal",
-      "live (Frontend)": "https://studentportal.daffaiq.com/",
-      demo: "https://drive.google.com/file/d/1Bpr3n178F14UltxffcNBhWI8E20LlRrT/view?usp=sharing",
-    },
+    links: [
+      {
+        type: "github",
+        url: "https://github.com/daffafaiqhs/student-portal",
+        locked: false,
+      },
+      // {
+      //   type: "live (Frontend)",
+      //   url: "https://studentportal.daffaiq.com/",
+      //   locked: false,
+      // },
+      {
+        type: "demo",
+        url: "https://drive.google.com/file/d/1Bpr3n178F14UltxffcNBhWI8E20LlRrT/view?usp=sharing",
+        locked: false,
+      },
+    ],
   },
 ];

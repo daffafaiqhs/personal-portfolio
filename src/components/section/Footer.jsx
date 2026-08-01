@@ -7,11 +7,11 @@ export function Footer(props) {
     >
       <div>
         <div className="flex items-center justify-center gap-2 text-xs font-light md:justify-start">
-          &copy; <DefaultNameLogo className="h-[14px]" /> 2025. All Rights
-          Reserved.
+          &copy; <DefaultNameLogo className="h-[14px]" />{" "}
+          {new Date().getFullYear()}. All Rights Reserved.
         </div>
         <p className="text-center text-xs font-light">
-          Made with passion, matcha, and accompanied by my cats.
+          Made with passion and lots of matcha.
         </p>
       </div>
       <div>
@@ -22,7 +22,7 @@ export function Footer(props) {
           </a>
         </p>
         <p className="text-center text-xs font-light md:text-right">
-          Last updated on January 20, 2025.
+          Last updated on July 28, 2026.
         </p>
       </div>
     </section>

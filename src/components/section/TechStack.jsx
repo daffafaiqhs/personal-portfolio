@@ -1,4 +1,3 @@
-import React from "react";
 import Marquee from "react-fast-marquee";
 
 import { techStack_Logo } from "../../portfolioContent";
@@ -16,13 +15,18 @@ export function TechStack() {
         gradientWidth={100}
         speed={25}
       >
-        {Object.keys(techStack_Logo).map((key) => (
-          <div key={key} className="mr-10 text-[3rem] md:mr-14">
-            {React.createElement(techStack_Logo[key], {
-              className: "my-4 h-10 lg:h-11 xl:h-12 2xl:h-14",
-            })}
-          </div>
-        ))}
+        {Object.entries(techStack_Logo).map(([key, Logo]) => {
+          if (!Logo) {
+            console.error(`${key} is undefined`);
+            return null;
+          }
+
+          return (
+            <div key={key} className="mr-10 text-[3rem] md:mr-14">
+              <Logo className="my-4 h-10 lg:h-11 xl:h-12 2xl:h-14" />
+            </div>
+          );
+        })}
       </Marquee>
     </section>
   );

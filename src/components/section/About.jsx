@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { IoMailOpen, IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
 
 import {
@@ -13,7 +13,7 @@ function AboutComponent(props, ref) {
   return (
     <section
       ref={ref}
-      className="grid-rows-[1fr, auto] grid gap-4 md:grid-cols-2 md:grid-rows-1"
+      className="grid-rows-[1fr, auto] grid scroll-mt-40 gap-4 md:grid-cols-2 md:grid-rows-1"
     >
       <SelfPotrait />
       <Description />
@@ -94,9 +94,15 @@ function Description() {
           {Array.from({ length: 5 }, (_, index) => (
             <div
               key={index}
-              className={`rounded-full ${intoductionSelector === index ? "bg-gradient-to-t from-brand-yellow to-brand-orange" : "bg-gray-200"} cursor-pointer p-3`}
+              className="relative cursor-pointer overflow-hidden rounded-full bg-gray-200 p-3"
               onClick={() => setIntroductionSelector(index)}
-            />
+            >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-t from-brand-yellow to-brand-orange"
+                animate={{ opacity: intoductionSelector === index ? 1 : 0 }}
+                transition={{ duration: 0.3 }}
+              />
+            </div>
           ))}
         </div>
         <div className="mt-2 flex justify-between text-xs font-light">
@@ -104,9 +110,18 @@ function Description() {
           <p>longest</p>
         </div>
       </div>
-      <p className="mt-5 text-justify text-sm font-light leading-loose xl:text-base xl:leading-loose">
-        {about_IntroductionMessage[intoductionSelector]}
-      </p>
+      <AnimatePresence mode="wait">
+        <motion.p
+          key={intoductionSelector}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.25 }}
+          className="mt-5 text-justify text-sm font-light leading-loose xl:text-base xl:leading-loose"
+        >
+          {about_IntroductionMessage[intoductionSelector]}
+        </motion.p>
+      </AnimatePresence>
     </BackgroundBox>
   );
 }
