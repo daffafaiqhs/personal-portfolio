@@ -12,6 +12,7 @@ import BestFPPibiti from "./BestFPPibiti.jpg";
 import GSICert from "./GSICert.jpg";
 import RekomendasiAsmen from "./RekomendasiAsmen.png";
 import BNSPCert from "./BNSPCert.jpg";
+import EPTCert from "./EPTCert.jpg";
 
 export {
   KeterampilanIntiCert,
@@ -28,4 +29,5 @@ export {
   GSICert,
   RekomendasiAsmen,
   BNSPCert,
+  EPTCert,
 };

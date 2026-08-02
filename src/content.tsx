@@ -2,7 +2,7 @@ import type { IconType } from "react-icons";
 import { IoLogoGithub, IoLogoLinkedin, IoMailOpen } from "react-icons/io5";
 import { BNSPLogo, GSILogo, UPNLogo } from "./assets/logo/organization";
 import { AsmenSessionRuangguru, FPPresentationRuangguru, LastDayGSI, SuratKelulusanRuangguru } from "./assets/images";
-import { AsmenCert, BNSPCert, GSICert, RekomendasiAsmen, RuangguruCert } from "./assets/certificate";
+import { AsmenCert, BNSPCert, EPTCert, GSICert, RekomendasiAsmen, RuangguruCert } from "./assets/certificate";
 import { RuangguruLogo } from "./assets/logo/organization/Ruangguru";
 import { ChakraUILogo, CSSLogo, FigmaLogo, FlutterLogo, GolangLogo, HTMLLogo, HuggingFaceLogo, JavascriptLogo, MySQLLogo, PostgreSQLLogo, PythonLogo, ReactJSLogo, TailwindCSSLogo } from "./assets/logo/tech";
 import { CoverBrowserExtension, CoverIONS, CoverModel, CoverPersonalPortfolio, CoverStudentPortal } from "./assets/projects";
@@ -303,6 +303,25 @@ export const experiences: Experiences = [
         additionalDurationInformation: undefined,
         skillsAcquired: [],
         attachments: [BNSPCert],
+      },
+      {
+        title: "English Proficiency Test (EPT)",
+        additionalTitleInformation: "Credential ID 131114",
+        description:
+          <>
+            Achieved a score of 460 on the English Proficiency Test
+            (EPT) administered by UPA Bahasa UPN Veteran Jawa Timur, within the
+            official score range of 310 to 677. The assessment evaluates English
+            language proficiency across listening comprehension, structure and written
+            expression, and reading comprehension, demonstrating my ability to
+            understand and communicate in academic and professional contexts.
+          </>,
+        organizationName: "UPA Bahasa UPN Veteran Jawa Timur",
+        organizationLogo: UPNLogo,
+        duration: "",
+        additionalDurationInformation: undefined,
+        skillsAcquired: [],
+        attachments: [EPTCert],
       },
     ]
   }
