@@ -4,7 +4,7 @@ import { DefaultNameLogo } from "../../assets/logo";
 export function Footer(props: React.ComponentProps<"section">) {
   return (
     <section
-      className={clsx("flex flex-col gap-4 py-8 sm-md:w-sm-md md:w-auto md:flex-row md:justify-between 2xl:w-2xl ", props.className)}
+      className={clsx("flex flex-col gap-4 py-8 sm-md:w-sm-md md:w-auto md:!flex-row md:justify-between 2xl:w-2xl ", props.className)}
     >
       <div>
         <div className="flex items-center justify-center gap-2 text-xs font-light md:justify-start">
