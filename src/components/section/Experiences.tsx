@@ -39,7 +39,6 @@ export function ExperiencesComponent(_props: React.ComponentProps<"div">, ref: R
   }, [currentSection]);
 
   useLayoutEffect(() => {
-    console.log(containerRef.current);
     const el = containerRef.current;
     if (!el) return;
 
@@ -187,6 +186,27 @@ function ExperienceItemComponent({ experience, currentSection }: { experience: E
     }
   }
 
+  function updateAttachmentCaption(text: string, delay = 300) {
+    setTimeout(() => {
+      const banner = document.querySelector(".PhotoView-Slider__BannerWrap");
+
+      if (!banner) return;
+
+      const existing = banner.querySelector<HTMLParagraphElement>(".attachment-caption");
+
+      if (existing) {
+        existing.textContent = text;
+        return;
+      }
+
+      const caption = document.createElement("p");
+      caption.textContent = text;
+      caption.className = "attachment-caption";
+
+      banner.insertBefore(caption, banner.children[1] ?? null);
+    }, delay)
+  }
+
   return (
     <div className="flex flex-col gap-4">
       <div className="md:flex md:justify-between">
@@ -251,11 +271,11 @@ function ExperienceItemComponent({ experience, currentSection }: { experience: E
       }
       {experience.attachments?.length > 0 && (
         <div className="grid grid-cols-2 place-items-center gap-5 md:grid-cols-4 xl:grid-cols-5">
-          <PhotoProvider>
+          <PhotoProvider maskOpacity={0.9} onVisibleChange={(_visible, index) => updateAttachmentCaption(experience.attachments[index].caption)} onIndexChange={(index) => updateAttachmentCaption(experience.attachments[index].caption, 0)}>
             {experience.attachments.map((item, index) => (
               <AttachmentItemComponent
                 key={`${experience.title}-${index}`}
-                src={item}
+                src={item.src}
               />
             ))}
           </PhotoProvider>
@@ -290,7 +310,7 @@ function AttachmentItemComponent({ src }: { src: string }) {
           }}
         >
           <MdZoomOutMap />
-          <p className="text-base">View Image</p>
+          <p className="text-base">View</p>
         </motion.div>
         <div className="aspect-[4/3] w-full">
           <img

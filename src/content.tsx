@@ -1,7 +1,7 @@
 import type { IconType } from "react-icons";
 import { IoLogoGithub, IoLogoLinkedin, IoMailOpen } from "react-icons/io5";
 import { BNSPLogo, GSILogo, UPNLogo } from "./assets/logo/organization";
-import { AsmenSessionRuangguru, FPPresentationRuangguru, LastDayGSI, SuratKelulusanRuangguru } from "./assets/images";
+import { AsmenSessionRuangguru, FPPresentationRuangguru, LastDayGSI } from "./assets/images";
 import { AsmenCert, BNSPCert, EPTCert, GSICert, RekomendasiAsmen, RuangguruCert } from "./assets/certificate";
 import { RuangguruLogo } from "./assets/logo/organization/Ruangguru";
 import { ChakraUILogo, CLogo, CPlusPlusLogo, CSSLogo, FigmaLogo, FlutterLogo, GolangLogo, HTMLLogo, HuggingFaceLogo, JavascriptLogo, MySQLLogo, PostgreSQLLogo, PythonLogo, ReactJSLogo, SQLLiteLogo, TailwindCSSLogo } from "./assets/logo/tech";
@@ -141,7 +141,10 @@ export type ExperienceItem = {
   additionalDurationInformation: string | undefined,
   skillsAcquired: string[],
   techStack: StackName[],
-  attachments: string[],
+  attachments: {
+    caption: string,
+    src: string,
+  }[],
 }
 type Experiences = {
   title: ExperienceTitle,
@@ -186,7 +189,14 @@ export const experiences: Experiences = [
         ],
         techStack: ["Figma", "Flutter", "SQLite"],
         attachments: [
-          LastDayGSI, GSICert
+          {
+            caption: "Wrapping Up My Internship at GSI ❤️",
+            src: LastDayGSI
+          },
+          {
+            caption: "Internship Completion Certificate",
+            src: GSICert
+          },
         ],
       },
       {
@@ -215,9 +225,18 @@ export const experiences: Experiences = [
         ],
         techStack: ["HTML", "CSS", "Javascript", "ReactJS", "Golang"],
         attachments: [
-          AsmenSessionRuangguru,
-          AsmenCert,
-          RekomendasiAsmen,
+          {
+            caption: "Mentor Assistant Session",
+            src: AsmenSessionRuangguru
+          },
+          {
+            caption: "Mentor Assistant Certificate",
+            src: AsmenCert
+          },
+          {
+            caption: "Mentor Assistant Letter of Recommendation",
+            src: RekomendasiAsmen
+          },
         ],
       },
     ]
@@ -278,9 +297,14 @@ export const experiences: Experiences = [
         ],
         techStack: ["HTML", "CSS", "Javascript", "ReactJS", "Golang", "ChakraUI", "TailwindCSS", "HuggingFace", "Figma"],
         attachments: [
-          FPPresentationRuangguru,
-          RuangguruCert,
-          SuratKelulusanRuangguru,
+          {
+            caption: "Final Project Presentation",
+            src: FPPresentationRuangguru
+          },
+          {
+            caption: "Certificate of Study Independent Completion",
+            src: RuangguruCert
+          },
         ],
       },
     ]
@@ -308,7 +332,12 @@ export const experiences: Experiences = [
         additionalDurationInformation: undefined,
         skillsAcquired: [],
         techStack: [],
-        attachments: [BNSPCert],
+        attachments: [
+          {
+            caption: "Letter of Completion",
+            src: BNSPCert
+          }
+        ],
       },
       {
         title: "English Proficiency Test (EPT)",
@@ -328,7 +357,12 @@ export const experiences: Experiences = [
         additionalDurationInformation: undefined,
         skillsAcquired: [],
         techStack: [],
-        attachments: [EPTCert],
+        attachments: [
+          {
+            caption: "EPT Certificate",
+            src: EPTCert
+          }
+        ],
       },
     ]
   }
