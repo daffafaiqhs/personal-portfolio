@@ -16,3 +16,6 @@ export { HuggingFaceLogo } from "./HuggingFace";
 export { PythonLogo } from "./Python";
 export { FlutterLogo } from "./Flutter";
 export { MySQLLogo } from "./MySQL";
+export { SQLLiteLogo } from "./SQLLite";
+export { CPlusPlusLogo } from "./CPlusPlus";
+export { CLogo } from "./C";

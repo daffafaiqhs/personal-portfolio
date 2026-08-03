@@ -1,10 +1,10 @@
 import type { IconType } from "react-icons";
 import { IoLogoGithub, IoLogoLinkedin, IoMailOpen } from "react-icons/io5";
 import { BNSPLogo, GSILogo, UPNLogo } from "./assets/logo/organization";
-import { AsmenSessionRuangguru, FPPresentationRuangguru, LastDayGSI, SuratKelulusanRuangguru } from "./assets/images";
-import { AsmenCert, BNSPCert, GSICert, RekomendasiAsmen, RuangguruCert } from "./assets/certificate";
+import { AsmenSessionRuangguru, FPPresentationRuangguru, LastDayGSI } from "./assets/images";
+import { AsmenCert, BNSPCert, EPTCert, GSICert, RekomendasiAsmen, RuangguruCert } from "./assets/certificate";
 import { RuangguruLogo } from "./assets/logo/organization/Ruangguru";
-import { ChakraUILogo, CSSLogo, FigmaLogo, FlutterLogo, GolangLogo, HTMLLogo, HuggingFaceLogo, JavascriptLogo, MySQLLogo, PostgreSQLLogo, PythonLogo, ReactJSLogo, TailwindCSSLogo } from "./assets/logo/tech";
+import { ChakraUILogo, CLogo, CPlusPlusLogo, CSSLogo, FigmaLogo, FlutterLogo, GolangLogo, HTMLLogo, HuggingFaceLogo, JavascriptLogo, MySQLLogo, PostgreSQLLogo, PythonLogo, ReactJSLogo, SQLLiteLogo, TailwindCSSLogo } from "./assets/logo/tech";
 import { CoverBrowserExtension, CoverIONS, CoverModel, CoverPersonalPortfolio, CoverStudentPortal } from "./assets/projects";
 
 type ContactName = "email" | "github" | "linkedin"
@@ -140,7 +140,11 @@ export type ExperienceItem = {
   duration: string,
   additionalDurationInformation: string | undefined,
   skillsAcquired: string[],
-  attachments: string[],
+  techStack: StackName[],
+  attachments: {
+    caption: string,
+    src: string,
+  }[],
 }
 type Experiences = {
   title: ExperienceTitle,
@@ -183,8 +187,16 @@ export const experiences: Experiences = [
           "Applied state management, asynchronous programming, and error handling to ensure smooth application performance.",
           "Collaborated with team members using Git and participated in the software development lifecycle, including feature development, testing, and debugging.",
         ],
+        techStack: ["Figma", "Flutter", "SQLite"],
         attachments: [
-          LastDayGSI, GSICert
+          {
+            caption: "Wrapping Up My Internship at GSI ❤️",
+            src: LastDayGSI
+          },
+          {
+            caption: "Internship Completion Certificate",
+            src: GSICert
+          },
         ],
       },
       {
@@ -211,10 +223,20 @@ export const experiences: Experiences = [
           "Reviewed mentees' projects and source code, providing constructive feedback to improve code quality, best practices, and overall understanding.",
           "Monitored mentees' learning progress, identified challenges they encountered, and reported updates to the Ruangguru team to ensure appropriate guidance and support.",
         ],
+        techStack: ["HTML", "CSS", "Javascript", "ReactJS", "Golang"],
         attachments: [
-          AsmenSessionRuangguru,
-          AsmenCert,
-          RekomendasiAsmen,
+          {
+            caption: "Mentor Assistant Session",
+            src: AsmenSessionRuangguru
+          },
+          {
+            caption: "Mentor Assistant Certificate",
+            src: AsmenCert
+          },
+          {
+            caption: "Mentor Assistant Letter of Recommendation",
+            src: RekomendasiAsmen
+          },
         ],
       },
     ]
@@ -241,6 +263,7 @@ export const experiences: Experiences = [
           "Learned software engineering principles through Rekayasa Perangkat Lunak and Analisis & Desain Sistem.",
           "Applied project planning, collaboration, and software development workflows through Manajemen Proyek.",
         ],
+        techStack: ["C", "C++", "HTML", "CSS", "Javascript", "ReactNative", "Figma"],
         attachments: [],
       },
       {
@@ -272,10 +295,16 @@ export const experiences: Experiences = [
           "Design and manage relational databases while also learning about NoSQL database through Sistem Manajemen dan Teknologi Basis Data subject.",
           "Understand Machine Learning fundamentals and integrate AI technologies into applications throught Menguasai Teknologi Artificial Intelligence subject.",
         ],
+        techStack: ["HTML", "CSS", "Javascript", "ReactJS", "Golang", "ChakraUI", "TailwindCSS", "HuggingFace", "Figma"],
         attachments: [
-          FPPresentationRuangguru,
-          RuangguruCert,
-          SuratKelulusanRuangguru,
+          {
+            caption: "Final Project Presentation",
+            src: FPPresentationRuangguru
+          },
+          {
+            caption: "Certificate of Study Independent Completion",
+            src: RuangguruCert
+          },
         ],
       },
     ]
@@ -302,72 +331,104 @@ export const experiences: Experiences = [
         duration: "",
         additionalDurationInformation: undefined,
         skillsAcquired: [],
-        attachments: [BNSPCert],
+        techStack: [],
+        attachments: [
+          {
+            caption: "Letter of Completion",
+            src: BNSPCert
+          }
+        ],
+      },
+      {
+        title: "English Proficiency Test (EPT)",
+        additionalTitleInformation: "Credential ID 131114",
+        description:
+          <>
+            Achieved a score of 460 on the English Proficiency Test
+            (EPT) administered by UPA Bahasa UPN Veteran Jawa Timur, within the
+            official score range of 310 to 677. The assessment evaluates English
+            language proficiency across listening comprehension, structure and written
+            expression, and reading comprehension, demonstrating my ability to
+            understand and communicate in academic and professional contexts.
+          </>,
+        organizationName: "UPA Bahasa UPN Veteran Jawa Timur",
+        organizationLogo: UPNLogo,
+        duration: "",
+        additionalDurationInformation: undefined,
+        skillsAcquired: [],
+        techStack: [],
+        attachments: [
+          {
+            caption: "EPT Certificate",
+            src: EPTCert
+          }
+        ],
       },
     ]
   }
 ]
 
-export type StackName = "HTML" | "CSS" | "Javascript" | "ReactJS" | "TailwindCSS" | "ChakraUI" | "Flutter" | "Golang" | "PostgreSQL" | "MySQL" | "Figma" | "Python" | "HuggingFace"
-type TechStack = {
-  name: StackName
-  logo: React.FC<React.ComponentProps<"svg">>
-}[]
+type TechStackItem = {
+  logo: React.FC<React.ComponentProps<"svg">>;
+};
 
-export const techStack: TechStack = [
-  {
-    name: "HTML",
-    logo: HTMLLogo
+export const techStack = {
+  HTML: {
+    logo: HTMLLogo,
   },
-  {
-    name: "CSS",
-    logo: CSSLogo
+  CSS: {
+    logo: CSSLogo,
   },
-  {
-    name: "Javascript",
-    logo: JavascriptLogo
+  Javascript: {
+    logo: JavascriptLogo,
   },
-  {
-    name: "ReactJS",
-    logo: ReactJSLogo
+  ReactJS: {
+    logo: ReactJSLogo,
   },
-  {
-    name: "TailwindCSS",
-    logo: TailwindCSSLogo
+  ReactNative: {
+    logo: ReactJSLogo,
   },
-  {
-    name: "ChakraUI",
-    logo: ChakraUILogo
+  TailwindCSS: {
+    logo: TailwindCSSLogo,
   },
-  {
-    name: "Flutter",
-    logo: FlutterLogo
+  ChakraUI: {
+    logo: ChakraUILogo,
   },
-  {
-    name: "Golang",
-    logo: GolangLogo
+  Flutter: {
+    logo: FlutterLogo,
   },
-  {
-    name: "PostgreSQL",
-    logo: PostgreSQLLogo
+  Golang: {
+    logo: GolangLogo,
   },
-  {
-    name: "MySQL",
-    logo: MySQLLogo
+  PostgreSQL: {
+    logo: PostgreSQLLogo,
   },
-  {
-    name: "Figma",
-    logo: FigmaLogo
+  MySQL: {
+    logo: MySQLLogo,
   },
-  {
-    name: "Python",
-    logo: PythonLogo
+  Figma: {
+    logo: FigmaLogo,
   },
-  {
-    name: "HuggingFace",
-    logo: HuggingFaceLogo
+  Python: {
+    logo: PythonLogo,
   },
-]
+  HuggingFace: {
+    logo: HuggingFaceLogo,
+  },
+  SQLite: {
+    logo: SQLLiteLogo,
+  },
+  "C": {
+    logo: CLogo,
+  },
+  "C++": {
+    logo: CPlusPlusLogo,
+  },
+} satisfies Record<string, TechStackItem>;
+
+export type StackName = keyof typeof techStack;
+
+export const mainTechStack: StackName[] = ["HTML", "CSS", "Javascript", "ReactJS", "TailwindCSS", "Flutter", "Golang", "MySQL", "PostgreSQL", "SQLite", "Figma", "Python", "HuggingFace"]
 
 type LinkType = "Github" | "Demo" | "Live" | "Journal Article"
 type LinkRestriction = {
@@ -521,4 +582,50 @@ export const projects: Project[] = [
       },
     ],
   },
+];
+
+export const footerStartWords = [
+  "passion",
+  "curiosity",
+  "coffee",
+  "matcha",
+  "clean code",
+  "late nights",
+  "determination",
+  "patience",
+  "creativity",
+  "good music",
+  "lofi beats",
+  "keyboard clicks",
+  "cat memes",
+  "tiny victories",
+  "optimism",
+  "open source",
+  "debugging",
+  "feature requests",
+  "AI assistance",
+  "happy accidents",
+];
+
+export const footerEndingWords = [
+  "and lots of coffee.",
+  "and plenty of matcha.",
+  "plus a few bugs.",
+  "and countless git commits.",
+  "with a sprinkle of chaos.",
+  "and a rubber duck.",
+  "plus console.log().",
+  "and questionable sleep schedules.",
+  "with good vibes.",
+  "and dark mode.",
+  "plus one more refactor.",
+  "and a little luck.",
+  "with lots of trial and error.",
+  "and endless curiosity.",
+  "plus some keyboard smashing.",
+  "and too many browser tabs.",
+  "with just one more commit.",
+  "and a dash of caffeine.",
+  "plus persistent optimism.",
+  "and lots of learning.",
 ];
