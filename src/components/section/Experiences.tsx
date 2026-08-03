@@ -7,6 +7,7 @@ import { BackgroundBox } from "../BackgroundBox";
 import { experiences, type ExperienceItem, type ExperienceTitle } from "../../content";
 import clsx from "clsx";
 import { IoCaretForwardOutline } from "react-icons/io5";
+import { TechStackTag } from "../TechStackTag";
 
 export function ExperiencesComponent(_props: React.ComponentProps<"div">, ref: React.ForwardedRef<React.ComponentRef<"div">>) {
   const [currentSection, setCurrentSection] = useState<ExperienceTitle>("Work Experiences");
@@ -106,7 +107,7 @@ export function ExperiencesComponent(_props: React.ComponentProps<"div">, ref: R
               className="flex w-full flex-1 flex-col gap-10 overflow-y-scroll pr-4 pt-4 lg:h-full lg:pt-0"
             >
               {experiences.find((experience) => experience.title === currentSection)?.items.map((experienceItem, index) =>
-                <ExperienceItemComponent key={index + "-" + experienceItem.title} experience={experienceItem} />
+                <ExperienceItemComponent key={index + "-" + experienceItem.title} experience={experienceItem} currentSection={currentSection} />
               )}
             </div>
             {isScrollable && (
@@ -132,7 +133,7 @@ export function ExperiencesComponent(_props: React.ComponentProps<"div">, ref: R
 
 export const ExperiencesSection = React.forwardRef(ExperiencesComponent);
 
-function ExperienceItemComponent({ experience }: { experience: ExperienceItem }) {
+function ExperienceItemComponent({ experience, currentSection }: { experience: ExperienceItem, currentSection: ExperienceTitle }) {
   const calculateDuration = (rawDate: string) => {
     const parseDate = (str: string) => {
       str = str.trim();
@@ -175,6 +176,17 @@ function ExperienceItemComponent({ experience }: { experience: ExperienceItem })
     return parts.join(" ");
   };
 
+  function generateTechStackIntro(currentSection: ExperienceTitle) {
+    switch (currentSection) {
+      case "Work Experiences":
+        return "The main technologies used in this role include:"
+      case "Educations":
+        return "The main technologies learned during this education include:"
+      default:
+        break;
+    }
+  }
+
   return (
     <div className="flex flex-col gap-4">
       <div className="md:flex md:justify-between">
@@ -183,8 +195,8 @@ function ExperienceItemComponent({ experience }: { experience: ExperienceItem })
             <experience.organizationLogo />
           </div>
           <div className="text-center md:text-start">
-            <p className="md:mb-1 xl:text-lg">{experience.title}</p>
-            <div className="flex flex-col items-center gap-1 md:!flex-row text-sm mb-2 md:mb-4 lg:mb-0 xl:text-lg">
+            <p className="md:mb-1 xl:text-base">{experience.title}</p>
+            <div className="flex flex-col items-center gap-1 md:!flex-row text-sm mb-2 md:mb-4 lg:mb-0 xl:text-base">
               <p className="font-light text-gray-600 ">
                 {experience.organizationName}
               </p>
@@ -212,19 +224,31 @@ function ExperienceItemComponent({ experience }: { experience: ExperienceItem })
         </div>
       </div>
       <hr className="rounded border border-brand-yellow" />
-      <p className="text-sm leading-relaxed text-justify font-light xl:text-lg">
+      <p className="text-sm !leading-relaxed text-justify font-light xl:text-base">
         {experience.description}
       </p>
-      <li className="flex list-none flex-col gap-2 font-light">
-        {experience.skillsAcquired.map((skill, index) => {
-          return (
-            <ul key={index} className="flex gap-4">
-              <FiArrowUpRight className="mt-1 shrink-0" />
-              <p className="text-sm leading-relaxed text-justify xl:text-lg">{skill}</p>
-            </ul>
-          );
-        })}
-      </li>
+      {experience.skillsAcquired.length > 0 &&
+        <li className="flex list-none flex-col gap-2 font-light">
+          {experience.skillsAcquired.map((skill, index) => {
+            return (
+              <ul key={index} className="flex gap-4">
+                <FiArrowUpRight className="mt-1 shrink-0" />
+                <p className="text-sm leading-relaxed text-justify xl:text-base">{skill}</p>
+              </ul>
+            );
+          })}
+        </li>
+      }
+      {experience.techStack.length > 0 &&
+        <div>
+          <p className="text-xs xl:text-base leading-loose text-justify">{generateTechStackIntro(currentSection)}</p>
+          <div className="flex flex-wrap">
+            {experience.techStack.map((stackName, index) =>
+              <TechStackTag key={index} name={stackName} logoClassName="h-5" nameClassName="text-xs xl:text-sm" />)
+            }
+          </div>
+        </div>
+      }
       {experience.attachments?.length > 0 && (
         <div className="grid grid-cols-2 place-items-center gap-5 md:grid-cols-4 xl:grid-cols-5">
           <PhotoProvider>

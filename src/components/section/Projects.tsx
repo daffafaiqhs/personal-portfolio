@@ -7,7 +7,8 @@ import {
 import { BackgroundBox } from "../BackgroundBox";
 import { useLayoutEffect, useRef, useEffect } from "react";
 import { ModalComponent } from "../Modal";
-import { contacts, projects, techStack, type Project, type ProjectLink, type StackName } from "../../content";
+import { contacts, projects, type Project, type ProjectLink } from "../../content";
+import { TechStackTag } from "../TechStackTag";
 
 function ProjectsComponent(_props: React.ComponentProps<"div">, ref: React.ForwardedRef<React.ComponentRef<"div">>) {
   const containerRef = useRef<React.ComponentRef<"div">>(null);
@@ -160,7 +161,7 @@ function ProjectItemComponent({ project }: { project: Project }) {
             <p>Technologies used:</p>
             <div className="mb-10 flex flex-wrap gap-1 xl:mb-14">
               {project.techStack.map((value, index) => (
-                <TechStackTag key={index} name={value} />
+                <TechStackTag key={index} name={value} logoClassName="h-4" />
               ))}
             </div>
           </div>
@@ -219,20 +220,5 @@ function ProjectItemComponent({ project }: { project: Project }) {
         </div>
       </motion.div>
     </>
-  );
-}
-
-function TechStackTag({ name }: { name: StackName }) {
-  const stack = techStack.find((stack) => stack.name === name);
-
-  if (!stack) {
-    return null;
-  }
-
-  return (
-    <div className="flex w-fit items-center gap-2 rounded-lg p-2 text-xs">
-      <stack.logo className="h-4" />
-      <p>{name}</p>
-    </div>
   );
 }

@@ -4,7 +4,7 @@ import { BNSPLogo, GSILogo, UPNLogo } from "./assets/logo/organization";
 import { AsmenSessionRuangguru, FPPresentationRuangguru, LastDayGSI, SuratKelulusanRuangguru } from "./assets/images";
 import { AsmenCert, BNSPCert, EPTCert, GSICert, RekomendasiAsmen, RuangguruCert } from "./assets/certificate";
 import { RuangguruLogo } from "./assets/logo/organization/Ruangguru";
-import { ChakraUILogo, CSSLogo, FigmaLogo, FlutterLogo, GolangLogo, HTMLLogo, HuggingFaceLogo, JavascriptLogo, MySQLLogo, PostgreSQLLogo, PythonLogo, ReactJSLogo, TailwindCSSLogo } from "./assets/logo/tech";
+import { ChakraUILogo, CLogo, CPlusPlusLogo, CSSLogo, FigmaLogo, FlutterLogo, GolangLogo, HTMLLogo, HuggingFaceLogo, JavascriptLogo, MySQLLogo, PostgreSQLLogo, PythonLogo, ReactJSLogo, SQLLiteLogo, TailwindCSSLogo } from "./assets/logo/tech";
 import { CoverBrowserExtension, CoverIONS, CoverModel, CoverPersonalPortfolio, CoverStudentPortal } from "./assets/projects";
 
 type ContactName = "email" | "github" | "linkedin"
@@ -140,6 +140,7 @@ export type ExperienceItem = {
   duration: string,
   additionalDurationInformation: string | undefined,
   skillsAcquired: string[],
+  techStack: StackName[],
   attachments: string[],
 }
 type Experiences = {
@@ -183,6 +184,7 @@ export const experiences: Experiences = [
           "Applied state management, asynchronous programming, and error handling to ensure smooth application performance.",
           "Collaborated with team members using Git and participated in the software development lifecycle, including feature development, testing, and debugging.",
         ],
+        techStack: ["Figma", "Flutter", "SQLite"],
         attachments: [
           LastDayGSI, GSICert
         ],
@@ -211,6 +213,7 @@ export const experiences: Experiences = [
           "Reviewed mentees' projects and source code, providing constructive feedback to improve code quality, best practices, and overall understanding.",
           "Monitored mentees' learning progress, identified challenges they encountered, and reported updates to the Ruangguru team to ensure appropriate guidance and support.",
         ],
+        techStack: ["HTML", "CSS", "Javascript", "ReactJS", "Golang"],
         attachments: [
           AsmenSessionRuangguru,
           AsmenCert,
@@ -241,6 +244,7 @@ export const experiences: Experiences = [
           "Learned software engineering principles through Rekayasa Perangkat Lunak and Analisis & Desain Sistem.",
           "Applied project planning, collaboration, and software development workflows through Manajemen Proyek.",
         ],
+        techStack: ["C", "C++", "HTML", "CSS", "Javascript", "ReactNative", "Figma"],
         attachments: [],
       },
       {
@@ -272,6 +276,7 @@ export const experiences: Experiences = [
           "Design and manage relational databases while also learning about NoSQL database through Sistem Manajemen dan Teknologi Basis Data subject.",
           "Understand Machine Learning fundamentals and integrate AI technologies into applications throught Menguasai Teknologi Artificial Intelligence subject.",
         ],
+        techStack: ["HTML", "CSS", "Javascript", "ReactJS", "Golang", "ChakraUI", "TailwindCSS", "HuggingFace", "Figma"],
         attachments: [
           FPPresentationRuangguru,
           RuangguruCert,
@@ -302,6 +307,7 @@ export const experiences: Experiences = [
         duration: "",
         additionalDurationInformation: undefined,
         skillsAcquired: [],
+        techStack: [],
         attachments: [BNSPCert],
       },
       {
@@ -321,72 +327,74 @@ export const experiences: Experiences = [
         duration: "",
         additionalDurationInformation: undefined,
         skillsAcquired: [],
+        techStack: [],
         attachments: [EPTCert],
       },
     ]
   }
 ]
 
-export type StackName = "HTML" | "CSS" | "Javascript" | "ReactJS" | "TailwindCSS" | "ChakraUI" | "Flutter" | "Golang" | "PostgreSQL" | "MySQL" | "Figma" | "Python" | "HuggingFace"
-type TechStack = {
-  name: StackName
-  logo: React.FC<React.ComponentProps<"svg">>
-}[]
+type TechStackItem = {
+  logo: React.FC<React.ComponentProps<"svg">>;
+};
 
-export const techStack: TechStack = [
-  {
-    name: "HTML",
-    logo: HTMLLogo
+export const techStack = {
+  HTML: {
+    logo: HTMLLogo,
   },
-  {
-    name: "CSS",
-    logo: CSSLogo
+  CSS: {
+    logo: CSSLogo,
   },
-  {
-    name: "Javascript",
-    logo: JavascriptLogo
+  Javascript: {
+    logo: JavascriptLogo,
   },
-  {
-    name: "ReactJS",
-    logo: ReactJSLogo
+  ReactJS: {
+    logo: ReactJSLogo,
   },
-  {
-    name: "TailwindCSS",
-    logo: TailwindCSSLogo
+  ReactNative: {
+    logo: ReactJSLogo,
   },
-  {
-    name: "ChakraUI",
-    logo: ChakraUILogo
+  TailwindCSS: {
+    logo: TailwindCSSLogo,
   },
-  {
-    name: "Flutter",
-    logo: FlutterLogo
+  ChakraUI: {
+    logo: ChakraUILogo,
   },
-  {
-    name: "Golang",
-    logo: GolangLogo
+  Flutter: {
+    logo: FlutterLogo,
   },
-  {
-    name: "PostgreSQL",
-    logo: PostgreSQLLogo
+  Golang: {
+    logo: GolangLogo,
   },
-  {
-    name: "MySQL",
-    logo: MySQLLogo
+  PostgreSQL: {
+    logo: PostgreSQLLogo,
   },
-  {
-    name: "Figma",
-    logo: FigmaLogo
+  MySQL: {
+    logo: MySQLLogo,
   },
-  {
-    name: "Python",
-    logo: PythonLogo
+  Figma: {
+    logo: FigmaLogo,
   },
-  {
-    name: "HuggingFace",
-    logo: HuggingFaceLogo
+  Python: {
+    logo: PythonLogo,
   },
-]
+  HuggingFace: {
+    logo: HuggingFaceLogo,
+  },
+  SQLite: {
+    logo: SQLLiteLogo,
+  },
+  "C": {
+    logo: CLogo,
+  },
+  "C++": {
+    logo: CPlusPlusLogo,
+  },
+} satisfies Record<string, TechStackItem>;
+
+export type StackName = keyof typeof techStack;
+
+export const mainTechStack: StackName[] = ["HTML", "CSS", "Javascript", "ReactJS", "TailwindCSS", "Flutter", "Golang", "MySQL", "PostgreSQL", "SQLite", "Figma", "Python", "HuggingFace"]
 
 type LinkType = "Github" | "Demo" | "Live" | "Journal Article"
 type LinkRestriction = {

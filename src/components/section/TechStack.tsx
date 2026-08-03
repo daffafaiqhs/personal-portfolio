@@ -1,4 +1,4 @@
-import { techStack } from "../../content";
+import { mainTechStack, techStack } from "../../content";
 import { ReactMarques } from "react-marques";
 
 
@@ -10,10 +10,12 @@ export function TechStackSection() {
         fade={true}
         pauseOnHover
       >
-        {techStack.map((stack, index) => {
+        {mainTechStack.map((stackName, index) => {
+          const Logo = techStack[stackName].logo;
+
           return (
             <div key={index} className="mr-10 text-[3rem] md:mr-14">
-              <stack.logo className="my-4 h-10 lg:h-11 xl:h-12 2xl:h-14" />
+              <Logo className="my-4 h-10 lg:h-11 xl:h-12 2xl:h-14" />
             </div>
           );
         })}
